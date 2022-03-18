@@ -1,4 +1,4 @@
 {
   "singleQuote": true,
-  "importOrder": ["^@fluidly/(.*)$", "^[../]", "^[./]"]
+  "importOrder": ["^[../]", "^[./]"]
 }
