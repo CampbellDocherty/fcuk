@@ -29,19 +29,21 @@ export const TitleImage = styled.img`
 export const ArrowImage = styled.img<{
   readonly column: number;
   readonly row: number;
+  readonly mouseDown: boolean;
 }>`
   object-fit: contain;
-  width: 10rem;
-  height: 6rem;
+  width: ${(props) => (props.mouseDown ? '9.8rem' : '10rem')};
+  width: ${(props) => (props.mouseDown ? '9.8rem' : '10rem')};
+  height: ${(props) => (props.mouseDown ? '5.8rem' : '6rem')};
   grid-column: ${(props) => props.column};
   grid-row: ${(props) => props.row};
   cursor: pointer;
 `;
 
-export const RandomButtonImage = styled.img`
+export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
   object-fit: contain;
-  width: 20rem;
-  height: 12rem;
+  width: ${(props) => (props.mouseDown ? '19.8rem' : '20rem')};
+  height: ${(props) => (props.mouseDown ? '11.8rem' : '12rem')};
   grid-column: 3;
   grid-row: 5;
   cursor: pointer;
