@@ -1,19 +1,13 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import Arrow from './Arrow';
+import Button from './Button';
 import LeftArrow from './assets/fcuk-arrow-left.png';
 import RightArrow from './assets/fcuk-arrow-right.png';
 import RandomButton from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
-import { Container, RandomButtonImage, TitleImage, Wrapper } from './styles';
+import { Container, TitleImage, Wrapper } from './styles';
 
 const App: FC = () => {
-  const [mouseDownOnButton, setMouseDownOnButton] = useState<boolean>(false);
-  const onButtonMouseDown = () => {
-    setMouseDownOnButton(true);
-  };
-  const onButtonMouseUp = () => {
-    setMouseDownOnButton(false);
-  };
   return (
     <Container>
       <Wrapper>
@@ -54,13 +48,7 @@ const App: FC = () => {
           row={4}
           column={4}
         />
-        <RandomButtonImage
-          src={RandomButton}
-          alt="random button"
-          mouseDown={mouseDownOnButton}
-          onMouseDown={onButtonMouseDown}
-          onMouseUp={onButtonMouseUp}
-        />
+        <Button src={RandomButton} altText={'random button'} />
       </Wrapper>
     </Container>
   );
