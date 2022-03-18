@@ -1,0 +1,133 @@
+---
+version: 2.1
+
+orbs:
+  smoke-tests: fluidly/smoke-tests@1
+  terraform: fluidly/terraform@1
+
+commands:
+  install_dependencies:
+    steps:
+      - run:
+          name: install
+          command: |
+            if [ ! -d node_modules ]; then
+              yarn install --frozen-lockfile
+            fi
+
+jobs:
+  build:
+    resource_class: small
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - restore_cache:
+          key: myappname-frontend-dependencies-{{ checksum "yarn.lock" }}
+      - install_dependencies
+      - run:
+          name: build
+          command: REACT_APP_RELEASE=$CIRCLE_SHA1 && yarn build
+          environment:
+            NODE_ENV: production
+      - save_cache:
+          key: myappname-frontend-dependencies-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+      - run:
+          name: Compress build
+          command: tar -cvzf build.tar ./build
+      - store_artifacts:
+          path: ./build.tar
+
+  lint:
+    resource_class: small
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - restore_cache:
+          key: myappname-frontend-dependencies-{{ checksum "yarn.lock" }}
+      - install_dependencies
+      - run:
+          name: check_format
+          command: yarn check-format
+      - run:
+          name: lint
+          command: yarn lint
+
+  test:
+    resource_class: small
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - restore_cache:
+          key: myappname-frontend-dependencies-{{ checksum "yarn.lock" }}
+      - install_dependencies
+      - run:
+          name: test
+          command: yarn test
+
+  deploy:
+    resource_class: small
+    docker:
+      - image: google/cloud-sdk
+    steps:
+      - run:
+          name: Setup Google Cloud SDK
+          command: |
+            echo $GOOGLE_CREDENTIALS > ${HOME}/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+            gcloud config set project ${GOOGLE_PROJECT}
+      - attach_workspace:
+          at: .
+      - run:
+          name: Copy build folder to google storage bucket
+          command: |
+            gsutil \
+              rsync -r -a public-read -x '.*\.html$' . gs://myappname.fluidly.com/
+            gsutil \
+              -h "Cache-Control: public, max-age=0" \
+              cp -a public-read *.html gs://myappname.fluidly.com/
+          working_directory: build
+
+workflows:
+  version: 2
+  run_jobs:
+    jobs:
+      - build
+      - lint:
+          filters:
+            branches:
+              ignore: main
+      - test:
+          filters:
+            branches:
+              ignore: main
+      # - terraform/plan:
+      #     name: terraform_plan
+      #     context: INFRASTRUCTURE
+      # - terraform/apply:
+      #     name: terraform_apply
+      #     context: INFRASTRUCTURE
+      #     requires:
+      #       - terraform_plan
+      #     filters:
+      #       branches:
+      #         only: main
+      # - deploy:
+      #     context: INFRASTRUCTURE
+      #     requires:
+      #       - build
+      #     filters:
+      #       branches:
+      #         only: main
+      # - smoke-tests/test:
+      #     context: PUBLISHING
+      #     requires:
+      #       - deploy
