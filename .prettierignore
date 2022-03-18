@@ -1,5 +1,4 @@
 .gitignore
-.husky
 .nvmrc
 .prettierignore
 *.ico
