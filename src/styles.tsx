@@ -2,11 +2,7 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
-  margin: 0 10rem 0 10rem;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
+  margin: 0 20% 0 20%;
 `;
 
 export const Wrapper = styled.div`
@@ -20,9 +16,7 @@ export const Wrapper = styled.div`
 `;
 
 export const TitleImage = styled.img`
-  object-fit: contain;
-  width: 40rem;
-  height: 20rem;
+  width: 100%;
   grid-column: 3;
 `;
 
@@ -31,49 +25,39 @@ export const ArrowImage = styled.img<{
   readonly row: number;
   readonly mouseDown: boolean;
 }>`
-  object-fit: contain;
-  width: ${(props) => (props.mouseDown ? '9.8rem' : '10rem')};
-  width: ${(props) => (props.mouseDown ? '9.8rem' : '10rem')};
-  height: ${(props) => (props.mouseDown ? '5.8rem' : '6rem')};
+  width: ${(props) => (props.mouseDown ? '67%' : '70%')};
   grid-column: ${(props) => props.column};
   grid-row: ${(props) => props.row};
   cursor: pointer;
 `;
 
 export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
-  object-fit: contain;
-  width: ${(props) => (props.mouseDown ? '19.8rem' : '20rem')};
-  height: ${(props) => (props.mouseDown ? '11.8rem' : '12rem')};
+  width: ${(props) => (props.mouseDown ? '57%' : '60%')};
   grid-column: 3;
   grid-row: 5;
   cursor: pointer;
 `;
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
-  object-fit: contain;
-  height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 2;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 40px 40px 0px 40px;
+  padding: 5% 5% 0px 5%;
 `;
 
 export const BodyImage = styled.img<{ readonly shouldDisplay: boolean }>`
-  height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 3;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 40px 0px 40px;
+  padding: 0px 5% 0px 5%;
 `;
 
 export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
-  object-fit: contain;
-  height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 4;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 40px 40px 40px;
+  padding: 0px 5% 5% 5%;
 `;
