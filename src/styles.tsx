@@ -56,15 +56,16 @@ export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
   grid-column: 3;
   grid-row: 2;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
+  padding: 40px 40px 0px 40px;
 `;
 
 export const BodyImage = styled.img<{ readonly shouldDisplay: boolean }>`
-  object-fit: contain;
   height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 3;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
+  padding: 0px 40px 0px 40px;
 `;
 
 export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
@@ -74,4 +75,5 @@ export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   grid-column: 3;
   grid-row: 4;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
+  padding: 0px 40px 40px 40px;
 `;
