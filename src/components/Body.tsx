@@ -1,4 +1,4 @@
-import { BodyImage } from './styles';
+import { BodyImage } from '../styles';
 
 const Body = () => {
   return <BodyImage>body</BodyImage>;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RandomButtonImage } from './styles';
+import { RandomButtonImage } from '../styles';
 
 const Button = ({
   src,

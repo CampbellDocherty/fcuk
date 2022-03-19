@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowImage } from './styles';
+import { ArrowImage } from '../styles';
 
 const Arrow = ({
   src,

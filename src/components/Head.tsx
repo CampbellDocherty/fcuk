@@ -1,6 +1,6 @@
+import { HeadImage } from '../styles';
 import HeadOne from './assets/head-one-test.png';
 import HeadTwo from './assets/head-two-test.png';
-import { HeadImage } from './styles';
 
 const headImages = [HeadOne, HeadTwo];
 

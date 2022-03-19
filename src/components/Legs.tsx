@@ -1,4 +1,4 @@
-import { LegsImage } from './styles';
+import { LegsImage } from '../styles';
 
 const Legs = () => {
   return <LegsImage>Legs</LegsImage>;

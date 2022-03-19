@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react';
-import Arrow from './Arrow';
-import Body from './Body';
-import Button from './Button';
-import Head from './Head';
-import Legs from './Legs';
 import LeftArrow from './assets/fcuk-arrow-left.png';
 import RightArrow from './assets/fcuk-arrow-right.png';
 import RandomButton from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
+import Arrow from './components/Arrow';
+import Body from './components/Body';
+import Button from './components/Button';
+import Head from './components/Head';
+import Legs from './components/Legs';
 import { Container, TitleImage, Wrapper } from './styles';
 
 const App: FC = () => {
