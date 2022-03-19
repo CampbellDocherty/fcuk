@@ -55,4 +55,14 @@ describe('When a user lands on the home page', () => {
     expect(firstHeadStyle.visibility).toBe('visible');
     expect(secondHeadStyle.visibility).toBe('hidden');
   });
+
+  // it('loops back to the beginning when the head count exceeds the amount of head images', () => {
+  //   const headArrowRight = screen.getByAltText('first right arrow');
+  //   userEvent.click(headArrowRight);
+  //   userEvent.click(headArrowRight);
+  //   const firstHeadStyle = window.getComputedStyle(
+  //     screen.getByAltText('head image 1')
+  //   );
+  //   expect(firstHeadStyle.visibility).toBe('visible');
+  // });
 });

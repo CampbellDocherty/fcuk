@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
 import LeftArrow from './assets/fcuk-arrow-left.png';
 import RightArrow from './assets/fcuk-arrow-right.png';
 import RandomButton from './assets/fcuk-random-button.png';
@@ -6,37 +6,16 @@ import Title from './assets/fcuk-title.png';
 import Arrow from './components/Arrow';
 import Body from './components/Body';
 import Button from './components/Button';
-import Head from './components/Head';
+import HeadRow from './components/HeadRow';
 import Legs from './components/Legs';
 import { Container, TitleImage, Wrapper } from './styles';
 
 const App: FC = () => {
-  const [headCount, setHeadCount] = useState<number>(1);
-  const onNextHeadClick = () => {
-    setHeadCount(headCount + 1);
-  };
-  const onPreviousHeadClick = () => {
-    setHeadCount(headCount - 1);
-  };
   return (
     <Container>
       <Wrapper>
         <TitleImage src={Title} alt="fcuk title" />
-        <Arrow
-          src={LeftArrow}
-          altText={'first left arrow'}
-          row={2}
-          column={2}
-          onClick={onPreviousHeadClick}
-        />
-        <Head headCount={headCount} />
-        <Arrow
-          src={RightArrow}
-          altText={'first right arrow'}
-          row={2}
-          column={4}
-          onClick={onNextHeadClick}
-        />
+        <HeadRow />
         <Arrow
           src={LeftArrow}
           altText={'second left arrow'}

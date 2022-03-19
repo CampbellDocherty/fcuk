@@ -1,8 +1,5 @@
+import { headImages } from '../assets/images';
 import { HeadImage } from '../styles';
-import HeadOne from './assets/head-one-test.png';
-import HeadTwo from './assets/head-two-test.png';
-
-const headImages = [HeadOne, HeadTwo];
 
 const Head = ({ headCount }: { readonly headCount: number }) => {
   return (
