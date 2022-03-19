@@ -18,4 +18,8 @@ describe('When a user lands on the home page', () => {
   ])('shows the %s', (altText: string) => {
     screen.getByAltText(altText);
   });
+
+  it.each([['head image 1']])('shows the head image: %s', (altText: string) => {
+    screen.getByAltText(altText);
+  });
 });

@@ -48,3 +48,27 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
   grid-row: 5;
   cursor: pointer;
 `;
+
+export const HeadImage = styled.img`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  grid-column: 3;
+  grid-row: 2;
+`;
+
+export const BodyImage = styled.div`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  grid-column: 3;
+  grid-row: 3;
+`;
+
+export const LegsImage = styled.div`
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  grid-column: 3;
+  grid-row: 4;
+`;

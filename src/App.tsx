@@ -1,6 +1,9 @@
 import React, { FC } from 'react';
 import Arrow from './Arrow';
+import Body from './Body';
 import Button from './Button';
+import Head from './Head';
+import Legs from './Legs';
 import LeftArrow from './assets/fcuk-arrow-left.png';
 import RightArrow from './assets/fcuk-arrow-right.png';
 import RandomButton from './assets/fcuk-random-button.png';
@@ -18,18 +21,7 @@ const App: FC = () => {
           row={2}
           column={2}
         />
-        <Arrow
-          src={LeftArrow}
-          altText={'second left arrow'}
-          row={3}
-          column={2}
-        />
-        <Arrow
-          src={LeftArrow}
-          altText={'third left arrow'}
-          row={4}
-          column={2}
-        />
+        <Head />
         <Arrow
           src={RightArrow}
           altText={'first right arrow'}
@@ -37,11 +29,25 @@ const App: FC = () => {
           column={4}
         />
         <Arrow
+          src={LeftArrow}
+          altText={'second left arrow'}
+          row={3}
+          column={2}
+        />
+        <Body />
+        <Arrow
           src={RightArrow}
           altText={'second right arrow'}
           row={3}
           column={4}
         />
+        <Arrow
+          src={LeftArrow}
+          altText={'third left arrow'}
+          row={4}
+          column={2}
+        />
+        <Legs />
         <Arrow
           src={RightArrow}
           altText={'third right arrow'}
