@@ -55,7 +55,7 @@ export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
   grid-column: 3;
   grid-row: 2;
-  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
+  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
 `;
 
 export const BodyImage = styled.div`
