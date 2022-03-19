@@ -65,4 +65,13 @@ describe('When a user lands on the home page', () => {
     );
     expect(firstHeadStyle.visibility).toBe('visible');
   });
+
+  it('loops to the end when the head count is lower than 1', () => {
+    const headArrowLeft = screen.getByAltText('first left arrow');
+    userEvent.click(headArrowLeft);
+    const lastHeadStyle = window.getComputedStyle(
+      screen.getByAltText('head image 2')
+    );
+    expect(lastHeadStyle.visibility).toBe('visible');
+  });
 });

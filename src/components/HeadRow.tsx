@@ -14,6 +14,9 @@ const HeadRow = () => {
     setHeadCount(headCount + 1);
   };
   const onPreviousHeadClick = () => {
+    if (headCount === 1) {
+      return setHeadCount(headImages.length);
+    }
     setHeadCount(headCount - 1);
   };
   return (
