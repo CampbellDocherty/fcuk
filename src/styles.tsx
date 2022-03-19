@@ -67,10 +67,11 @@ export const BodyImage = styled.img<{ readonly shouldDisplay: boolean }>`
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
 `;
 
-export const LegsImage = styled.div`
+export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   object-fit: contain;
   height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 4;
+  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
 `;

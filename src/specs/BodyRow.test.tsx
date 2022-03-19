@@ -24,7 +24,7 @@ describe('When the user wants to interact with the body row', () => {
     expect(secondBodyStyle.visibility).toBe('visible');
   });
 
-  it('shows previous head image when the left arrow is clicked', () => {
+  it('shows previous body image when the left arrow is clicked', () => {
     clickArrow('second right arrow');
     clickArrow('second left arrow');
     const firstBodyStyle = getStyles('body image 1');
