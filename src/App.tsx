@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import Arrow from './Arrow';
 import Body from './Body';
 import Button from './Button';
@@ -11,6 +11,10 @@ import Title from './assets/fcuk-title.png';
 import { Container, TitleImage, Wrapper } from './styles';
 
 const App: FC = () => {
+  const [headCount, setHeadCount] = useState<number>(1);
+  const onNextHeadClick = () => {
+    setHeadCount(headCount + 1);
+  };
   return (
     <Container>
       <Wrapper>
@@ -21,12 +25,13 @@ const App: FC = () => {
           row={2}
           column={2}
         />
-        <Head />
+        <Head headCount={headCount} />
         <Arrow
           src={RightArrow}
           altText={'first right arrow'}
           row={2}
           column={4}
+          onClick={onNextHeadClick}
         />
         <Arrow
           src={LeftArrow}

@@ -6,11 +6,13 @@ const Arrow = ({
   altText,
   row,
   column,
+  onClick = () => {},
 }: {
   readonly src: any;
   readonly altText: string;
   readonly row: number;
   readonly column: number;
+  readonly onClick?: any;
 }) => {
   const [mouseDown, setMouseDown] = useState<boolean>(false);
   const onMouseDown = () => {
@@ -28,6 +30,7 @@ const Arrow = ({
       column={column}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
+      onClick={onClick}
     />
   );
 };

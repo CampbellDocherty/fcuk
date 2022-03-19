@@ -49,12 +49,13 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
   cursor: pointer;
 `;
 
-export const HeadImage = styled.img`
+export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
   object-fit: contain;
   height: 100%;
   width: 100%;
   grid-column: 3;
   grid-row: 2;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const BodyImage = styled.div`
