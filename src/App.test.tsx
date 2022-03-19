@@ -31,10 +31,28 @@ describe('When a user lands on the home page', () => {
   it('shows next head image when the first right arrow is clicked', () => {
     const headArrowRight = screen.getByAltText('first right arrow');
     userEvent.click(headArrowRight);
-    const firstHeadImage = screen.getByAltText('head image 1');
-    const secondHeadImage = screen.getByAltText('head image 2');
-    console.log(firstHeadImage);
-    expect(firstHeadImage).toBeVisible();
-    // expect(secondHeadImage).toBeVisible();
+    const firstHeadStyle = window.getComputedStyle(
+      screen.getByAltText('head image 1')
+    );
+    const secondHeadStyle = window.getComputedStyle(
+      screen.getByAltText('head image 2')
+    );
+    expect(firstHeadStyle.visibility).toBe('hidden');
+    expect(secondHeadStyle.visibility).toBe('visible');
+  });
+
+  it('shows previous head image when the first left arrow is clicked', () => {
+    const headArrowRight = screen.getByAltText('first right arrow');
+    userEvent.click(headArrowRight);
+    const headArrowLeft = screen.getByAltText('first left arrow');
+    userEvent.click(headArrowLeft);
+    const firstHeadStyle = window.getComputedStyle(
+      screen.getByAltText('head image 1')
+    );
+    const secondHeadStyle = window.getComputedStyle(
+      screen.getByAltText('head image 2')
+    );
+    expect(firstHeadStyle.visibility).toBe('visible');
+    expect(secondHeadStyle.visibility).toBe('hidden');
   });
 });

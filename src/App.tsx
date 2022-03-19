@@ -15,6 +15,9 @@ const App: FC = () => {
   const onNextHeadClick = () => {
     setHeadCount(headCount + 1);
   };
+  const onPreviousHeadClick = () => {
+    setHeadCount(headCount - 1);
+  };
   return (
     <Container>
       <Wrapper>
@@ -24,6 +27,7 @@ const App: FC = () => {
           altText={'first left arrow'}
           row={2}
           column={2}
+          onClick={onPreviousHeadClick}
         />
         <Head headCount={headCount} />
         <Arrow
