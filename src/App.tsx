@@ -4,7 +4,7 @@ import RightArrow from './assets/fcuk-arrow-right.png';
 import RandomButton from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
 import Arrow from './components/Arrow';
-import Body from './components/Body';
+import BodyRow from './components/BodyRow';
 import Button from './components/Button';
 import HeadRow from './components/HeadRow';
 import Legs from './components/Legs';
@@ -16,19 +16,7 @@ const App: FC = () => {
       <Wrapper>
         <TitleImage src={Title} alt="fcuk title" />
         <HeadRow />
-        <Arrow
-          src={LeftArrow}
-          altText={'second left arrow'}
-          row={3}
-          column={2}
-        />
-        <Body />
-        <Arrow
-          src={RightArrow}
-          altText={'second right arrow'}
-          row={3}
-          column={4}
-        />
+        <BodyRow />
         <Arrow
           src={LeftArrow}
           altText={'third left arrow'}

@@ -7,12 +7,14 @@ import Arrow from './Arrow';
 
 const HeadRow = () => {
   const [headCount, setHeadCount] = useState<number>(1);
+
   const onNextHeadClick = () => {
     if (headCount === headImages.length) {
       return setHeadCount(1);
     }
     setHeadCount(headCount + 1);
   };
+
   const onPreviousHeadClick = () => {
     if (headCount === 1) {
       return setHeadCount(headImages.length);

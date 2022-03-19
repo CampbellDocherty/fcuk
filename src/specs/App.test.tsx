@@ -1,13 +1,14 @@
 import { screen } from '@testing-library/dom';
 import { cleanup, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from './App';
+import App from '../App';
 
 describe('When a user lands on the home page', () => {
   beforeEach(() => {
     render(<App />);
   });
   afterEach(cleanup);
+
   it.each([
     ['first left arrow'],
     ['second left arrow'],
@@ -20,6 +21,14 @@ describe('When a user lands on the home page', () => {
   ])('shows the %s', (altText: string) => {
     screen.getByAltText(altText);
   });
+});
+
+describe('When the user wants to interact with the head row', () => {
+  beforeEach(() => {
+    render(<App />);
+  });
+
+  afterEach(cleanup);
 
   it.each([['head image 1'], ['head image 2']])(
     'shows the head image: %s',
