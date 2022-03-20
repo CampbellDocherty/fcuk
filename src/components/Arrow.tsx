@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { ArrowImage } from '../styles';
+import { ArrowButton, ArrowImage } from '../styles';
 
 const Arrow = ({
   src,
   altText,
   row,
   column,
-  onClick = () => {},
+  onClick,
 }: {
   readonly src: any;
   readonly altText: string;
   readonly row: number;
   readonly column: number;
-  readonly onClick?: any;
+  readonly onClick: any;
 }) => {
   const [mouseDown, setMouseDown] = useState<boolean>(false);
   const onMouseDown = () => {
@@ -22,16 +22,17 @@ const Arrow = ({
     setMouseDown(false);
   };
   return (
-    <ArrowImage
-      mouseDown={mouseDown}
-      src={src}
-      alt={altText}
+    <ArrowButton
+      onKeyDown={onMouseDown}
+      onKeyUp={onMouseUp}
+      onClick={onClick}
       row={row}
       column={column}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
-      onClick={onClick}
-    />
+    >
+      <ArrowImage mouseDown={mouseDown} src={src} alt={altText} />
+    </ArrowButton>
   );
 };
 

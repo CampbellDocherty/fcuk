@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { RandomButtonImage } from '../styles';
+import { RandomButton, RandomButtonImage } from '../styles';
 
 const Button = ({
   src,
@@ -8,21 +8,26 @@ const Button = ({
   readonly src: any;
   readonly altText: string;
 }) => {
-  const [mouseDownOnButton, setMouseDownOnButton] = useState<boolean>(false);
-  const onButtonMouseDown = () => {
+  const [mouseDownOnButton, setMouseDownOnButton] = useState(false);
+  const onMouseDown = () => {
     setMouseDownOnButton(true);
   };
-  const onButtonMouseUp = () => {
+  const onMouseUp = () => {
     setMouseDownOnButton(false);
   };
   return (
-    <RandomButtonImage
-      src={src}
-      alt={altText}
-      mouseDown={mouseDownOnButton}
-      onMouseDown={onButtonMouseDown}
-      onMouseUp={onButtonMouseUp}
-    />
+    <RandomButton
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onKeyDown={onMouseDown}
+      onKeyUp={onMouseUp}
+    >
+      <RandomButtonImage
+        src={src}
+        alt={altText}
+        mouseDown={mouseDownOnButton}
+      />
+    </RandomButton>
   );
 };
 

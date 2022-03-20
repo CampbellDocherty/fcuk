@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import RandomButton from './assets/fcuk-random-button.png';
+import Random from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
 import BodyRow from './components/BodyRow';
 import Button from './components/Button';
@@ -15,7 +15,7 @@ const App: FC = () => {
         <HeadRow />
         <BodyRow />
         <LegsRow />
-        <Button src={RandomButton} altText={'random button'} />
+        <Button src={Random} altText={'random button'} />
       </Wrapper>
     </Container>
   );

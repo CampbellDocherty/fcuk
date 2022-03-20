@@ -2,7 +2,9 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
-  margin: 0 20% 0 20%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const Wrapper = styled.div`
@@ -21,21 +23,39 @@ export const TitleImage = styled.img`
 `;
 
 export const ArrowImage = styled.img<{
-  readonly column: number;
-  readonly row: number;
   readonly mouseDown: boolean;
 }>`
-  width: ${(props) => (props.mouseDown ? '67%' : '70%')};
-  grid-column: ${(props) => props.column};
-  grid-row: ${(props) => props.row};
+  width: ${(props) => (props.mouseDown ? '97%' : '100%')};
   cursor: pointer;
 `;
 
+export const ArrowButton = styled.button<{
+  readonly column: number;
+  readonly row: number;
+}>`
+  grid-column: ${(props) => props.column};
+  grid-row: ${(props) => props.row};
+  width: 70%;
+  background-color: white;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+`;
+
 export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
-  width: ${(props) => (props.mouseDown ? '57%' : '60%')};
+  width: ${(props) => (props.mouseDown ? '97%' : '100%')};
+  cursor: pointer;
+`;
+
+export const RandomButton = styled.button`
+  width: 60%;
+  background-color: white;
   grid-column: 3;
   grid-row: 5;
-  cursor: pointer;
+  border: none;
+  border-radius: 300px;
+  padding: 0;
 `;
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
@@ -60,4 +80,20 @@ export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   grid-row: 4;
   visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
   padding: 0px 5% 5% 5%;
+`;
+
+export const AspectRatioBox = styled.div`
+  height: 0;
+  overflow: hidden;
+  padding-top: calc(1 / 1 * 100%);
+  background: white;
+  position: relative;
+`;
+
+export const AspectRatioBoxInside = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
