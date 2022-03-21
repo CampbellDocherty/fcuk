@@ -1,0 +1,57 @@
+name: Actions
+
+on: [push]
+
+jobs:
+  lint:
+    name: lint
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: v1-yarn-deps-
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install --production=false --frozen-lockfile
+
+      - name: Run eslint
+        run: yarn lint
+
+      - name: Run prettier
+        run: yarn check-format
+
+  test:
+    name: test
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    container:
+      image: node:16.12
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: v1-yarn-deps-
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install --production=false --frozen-lockfile
+
+      - name: test
+        run: yarn test
