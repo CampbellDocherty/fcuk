@@ -84,14 +84,16 @@ jobs:
       - name: Build
         id: build
         run: yarn build
-        
+
   deploy:
-  name: deploy
-  runs-on: ubuntu-latest
+    name: deploy
+    runs-on: ubuntu-latest
     env:
       NODE_ENV: production
     container:
       image: node:16.12
+
+    steps:
       - name: deploy
         run: |
           git config --global user.name $user_name
