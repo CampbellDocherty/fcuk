@@ -55,3 +55,51 @@ jobs:
 
       - name: test
         run: yarn test
+
+  build:
+    name: build
+    if: github.ref != 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+    container:
+      image: node:16.12
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: v1-yarn-deps-
+
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install --production=false --frozen-lockfile
+
+      - name: Build
+        id: build
+        run: yarn build
+        
+  deploy:
+  name: deploy
+  runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
+    container:
+      image: node:16.12
+      - name: deploy
+        run: |
+          git config --global user.name $user_name
+          git config --global user.email $user_email
+          git remote set-url origin https://${github_token}@github.com/${repository}
+          yarn deploy
+        env:
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+          repository: ${{ github.repository }}
