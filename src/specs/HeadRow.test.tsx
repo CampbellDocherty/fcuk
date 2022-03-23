@@ -1,6 +1,5 @@
-import { screen } from '@testing-library/dom';
+import { screen } from '@testing-library/react';
 import { cleanup, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { clickArrow, getStyles } from './helpers';
 
