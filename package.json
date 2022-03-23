@@ -5,6 +5,7 @@
   "homepage": "https://fcuk.github.io",
   "dependencies": {
     "@craco/craco": "^6.4.3",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "@types/styled-components": "^5.1.24",
@@ -46,10 +47,9 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/jest": "^27.4.1",
-    "@types/node": "^17.0.21",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.14",
     "@types/react-query": "^1.2.9",
