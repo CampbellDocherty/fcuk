@@ -20,8 +20,8 @@ describe('When the user wants to interact with the legs row', () => {
     clickArrow('third right arrow');
     const firstLegsStyle = getStyles('legs image 1');
     const secondLegsStyle = getStyles('legs image 2');
-    expect(firstLegsStyle.visibility).toBe('hidden');
-    expect(secondLegsStyle.visibility).toBe('visible');
+    expect(firstLegsStyle.display).toBe('none');
+    expect(secondLegsStyle.display).toBe('initial');
   });
 
   it('shows previous legs image when the left arrow is clicked', () => {
@@ -29,20 +29,20 @@ describe('When the user wants to interact with the legs row', () => {
     clickArrow('third left arrow');
     const firstLegsStyle = getStyles('legs image 1');
     const secondLegsStyle = getStyles('legs image 2');
-    expect(firstLegsStyle.visibility).toBe('visible');
-    expect(secondLegsStyle.visibility).toBe('hidden');
+    expect(firstLegsStyle.display).toBe('initial');
+    expect(secondLegsStyle.display).toBe('none');
   });
 
   it('loops back to the beginning when the legs count exceeds the amount of legs images', () => {
     clickArrow('third right arrow');
     clickArrow('third right arrow');
     const firstLegsStyle = getStyles('legs image 1');
-    expect(firstLegsStyle.visibility).toBe('visible');
+    expect(firstLegsStyle.display).toBe('initial');
   });
 
   it('loops to the end when the legs count is lower than 1', () => {
     clickArrow('third left arrow');
     const lastLegsStyle = getStyles('legs image 2');
-    expect(lastLegsStyle.visibility).toBe('visible');
+    expect(lastLegsStyle.display).toBe('initial');
   });
 });
