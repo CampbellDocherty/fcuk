@@ -1,34 +1,36 @@
-import { useState } from 'react';
 import RightArrow from '../assets/fcuk-arrow-right.png';
 import { bodyImages, headImages, legsImages } from '../assets/images';
 import { ArrowsSection } from '../styles';
 import Arrow from './Arrow';
 
-const RightArrows = () => {
-  const [headCount, setHeadCount] = useState<number>(1);
-  const [bodyCount, setBodyCount] = useState<number>(1);
-  const [legsCount, setLegsCount] = useState<number>(1);
-
-  const onNextLegsClick = () => {
-    if (legsCount === legsImages.length) {
-      return setLegsCount(1);
+const RightArrows = ({
+  count,
+  setCount,
+}: {
+  readonly count: any;
+  readonly setCount: any;
+}) => {
+  const onNextHeadClick = () => {
+    if (count.headCount === headImages.length) {
+      return setCount({ ...count, headCount: 1 });
     }
-    setLegsCount(legsCount + 1);
+    setCount({ ...count, headCount: count.headCount + 1 });
   };
 
   const onNextBodyClick = () => {
-    if (bodyCount === bodyImages.length) {
-      return setBodyCount(1);
+    if (count.bodyCount === bodyImages.length) {
+      return setCount({ ...count, bodyCount: 1 });
     }
-    setBodyCount(bodyCount + 1);
+    setCount({ ...count, bodyCount: count.bodyCount + 1 });
   };
 
-  const onNextHeadClick = () => {
-    if (headCount === headImages.length) {
-      return setHeadCount(1);
+  const onNextLegsClick = () => {
+    if (count.legsCount === legsImages.length) {
+      return setCount({ ...count, legsCount: 1 });
     }
-    setHeadCount(headCount + 1);
+    setCount({ ...count, legsCount: count.legsCount + 1 });
   };
+
   return (
     <ArrowsSection>
       <Arrow

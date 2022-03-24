@@ -27,7 +27,7 @@ const App: FC = () => {
       <CharacterSelectorSection>
         <LeftArrows count={count} setCount={setCount} />
         <ImagesSection count={count} />
-        <RightArrows />
+        <RightArrows count={count} setCount={setCount} />
       </CharacterSelectorSection>
       <Footer>
         <Button src={Random} altText={'random button'} />
