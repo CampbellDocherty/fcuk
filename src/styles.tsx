@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -18,8 +19,7 @@ export const Wrapper = styled.div`
 `;
 
 export const TitleImage = styled.img`
-  width: 100%;
-  grid-column: 3;
+  width: 40%;
 `;
 
 export const ArrowImage = styled.img<{
@@ -101,5 +101,24 @@ export const AspectRatioBoxInside = styled.div`
 export const LeftArrowsSection = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   max-width: 150px;
+  height: 100%;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+`;
+
+export const CharacterSelectorSection = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 `;
