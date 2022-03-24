@@ -85,23 +85,23 @@ jobs:
         id: build
         run: yarn build
 
-  deploy:
-    name: deploy
+  build-and-deploy:
+    name: build and deploy
     if: github.ref == 'refs/heads/main'
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
-      user_name: 'CampbellDocherty'
-      user_email: 'campbellsofitsidocherty@gmail.com'
-      github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-      repository: ${{ github.repository }}
-    container:
-      image: node:16.12
 
     steps:
-      - name: deploy
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install and Build
         run: |
-          git config --global user.name ${{ env.user_name }}
-          git config --global user.email ${{ env.user_email }}
-          git remote set-url origin https://${{ env.github_token }}@github.com/${{ env.repository }}
-          yarn deploy
+          yarn install
+          yarn build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
