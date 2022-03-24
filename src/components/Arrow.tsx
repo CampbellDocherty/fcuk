@@ -4,14 +4,10 @@ import { ArrowButton, ArrowImage } from '../styles';
 const Arrow = ({
   src,
   altText,
-  row,
-  column,
   onClick,
 }: {
   readonly src: any;
   readonly altText: string;
-  readonly row: number;
-  readonly column: number;
   readonly onClick: any;
 }) => {
   const [mouseDown, setMouseDown] = useState<boolean>(false);
@@ -26,8 +22,6 @@ const Arrow = ({
       onKeyDown={onMouseDown}
       onKeyUp={onMouseUp}
       onClick={onClick}
-      row={row}
-      column={column}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
     >

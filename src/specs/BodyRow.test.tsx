@@ -20,8 +20,8 @@ describe('When the user wants to interact with the body row', () => {
     clickArrow('second right arrow');
     const firstBodyStyle = getStyles('body image 1');
     const secondBodyStyle = getStyles('body image 2');
-    expect(firstBodyStyle.visibility).toBe('hidden');
-    expect(secondBodyStyle.visibility).toBe('visible');
+    expect(firstBodyStyle.display).toBe('none');
+    expect(secondBodyStyle.display).toBe('initial');
   });
 
   it('shows previous body image when the left arrow is clicked', () => {
@@ -29,20 +29,20 @@ describe('When the user wants to interact with the body row', () => {
     clickArrow('second left arrow');
     const firstBodyStyle = getStyles('body image 1');
     const secondBodyStyle = getStyles('body image 2');
-    expect(firstBodyStyle.visibility).toBe('visible');
-    expect(secondBodyStyle.visibility).toBe('hidden');
+    expect(firstBodyStyle.display).toBe('initial');
+    expect(secondBodyStyle.display).toBe('none');
   });
 
   it('loops back to the beginning when the body count exceeds the amount of body images', () => {
     clickArrow('second right arrow');
     clickArrow('second right arrow');
     const firstBodyStyle = getStyles('body image 1');
-    expect(firstBodyStyle.visibility).toBe('visible');
+    expect(firstBodyStyle.display).toBe('initial');
   });
 
   it('loops to the end when the body count is lower than 1', () => {
     clickArrow('second left arrow');
     const lastBodyStyle = getStyles('body image 2');
-    expect(lastBodyStyle.visibility).toBe('visible');
+    expect(lastBodyStyle.display).toBe('initial');
   });
 });

@@ -2,24 +2,15 @@ import styled from 'styled-components/macro';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   max-width: 1000px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
 `;
 
-export const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 0.7fr 1.6fr 0.7fr 1fr;
-  grid-template-rows: 1.2fr 0.9fr 0.9fr 0.9fr 1.1fr;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
-`;
-
 export const TitleImage = styled.img`
-  width: 100%;
-  grid-column: 3;
+  width: 40%;
 `;
 
 export const ArrowImage = styled.img<{
@@ -29,18 +20,15 @@ export const ArrowImage = styled.img<{
   cursor: pointer;
 `;
 
-export const ArrowButton = styled.button<{
-  readonly column: number;
-  readonly row: number;
-}>`
-  grid-column: ${(props) => props.column};
-  grid-row: ${(props) => props.row};
+export const ArrowButton = styled.button`
   width: 70%;
   background-color: white;
   padding: 0;
   border: none;
   display: flex;
   align-items: center;
+  align-self: center;
+  justify-self: center;
 `;
 
 export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
@@ -49,7 +37,7 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
 `;
 
 export const RandomButton = styled.button`
-  width: 60%;
+  width: 30%;
   background-color: white;
   grid-column: 3;
   grid-row: 5;
@@ -60,40 +48,54 @@ export const RandomButton = styled.button`
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 2;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 5% 5% 0px 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const BodyImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 3;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 5% 0px 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 4;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 5% 5% 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
-export const AspectRatioBox = styled.div`
-  height: 0;
-  overflow: hidden;
-  padding-top: calc(1 / 1 * 100%);
-  background: white;
-  position: relative;
+export const ArrowsSection = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  max-width: 150px;
+  height: 100%;
 `;
 
-export const AspectRatioBoxInside = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+export const Header = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 20vh;
+`;
+
+export const CharacterSelectorSection = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+`;
+
+export const CharacterImagesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
   height: 100%;
 `;
