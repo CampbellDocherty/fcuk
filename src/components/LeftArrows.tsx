@@ -34,22 +34,16 @@ const LeftArrows = () => {
       <Arrow
         src={LeftArrow}
         altText={'first left arrow'}
-        row={2}
-        column={2}
         onClick={onPreviousHeadClick}
       />
       <Arrow
         src={LeftArrow}
         altText={'second left arrow'}
-        row={3}
-        column={2}
         onClick={onPreviousBodyClick}
       />
       <Arrow
         src={LeftArrow}
         altText={'third left arrow'}
-        row={4}
-        column={2}
         onClick={onPreviousLegsClick}
       />
     </ArrowsSection>
