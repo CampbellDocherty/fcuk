@@ -84,24 +84,3 @@ jobs:
       - name: Build
         id: build
         run: yarn build
-
-  deploy:
-    name: deploy
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
-      user_name: 'CampbellDocherty'
-      user_email: 'campbellsofitsidocherty@gmail.com'
-      github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-      repository: ${{ github.repository }}
-    container:
-      image: node:16.12
-
-    steps:
-      - name: deploy
-        run: |
-          git config --global user.name ${{ env.user_name }}
-          git config --global user.email ${{ env.user_email }}
-          git remote set-url origin https://${{ env.github_token }}@github.com/${{ env.repository }}
-          yarn deploy
