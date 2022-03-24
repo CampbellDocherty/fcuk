@@ -8,14 +8,14 @@ import Arrow from './Arrow';
 const LegsRow = () => {
   const [legsCount, setLegsCount] = useState<number>(1);
 
-  const onNextBodyClick = () => {
+  const onNextLegsClick = () => {
     if (legsCount === legsImages.length) {
       return setLegsCount(1);
     }
     setLegsCount(legsCount + 1);
   };
 
-  const onPreviousBodyClick = () => {
+  const onPreviousLegsClick = () => {
     if (legsCount === 1) {
       return setLegsCount(legsImages.length);
     }
@@ -28,7 +28,7 @@ const LegsRow = () => {
         altText={'third left arrow'}
         row={4}
         column={2}
-        onClick={onPreviousBodyClick}
+        onClick={onPreviousLegsClick}
       />
       {legsImages.map((src, index) => {
         return (
@@ -45,7 +45,7 @@ const LegsRow = () => {
         altText={'third right arrow'}
         row={4}
         column={4}
-        onClick={onNextBodyClick}
+        onClick={onNextLegsClick}
       />
     </>
   );

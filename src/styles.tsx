@@ -97,3 +97,9 @@ export const AspectRatioBoxInside = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const LeftArrowsSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+`;
