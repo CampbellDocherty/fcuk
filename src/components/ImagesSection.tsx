@@ -6,10 +6,7 @@ import {
   LegsImage,
 } from '../styles';
 
-const ImagesSection = () => {
-  const headCount = 1;
-  const bodyCount = 1;
-  const legsCount = 1;
+const ImagesSection = ({ count }: { readonly count: any }) => {
   return (
     <CharacterImagesSection>
       {headImages.map((src, index) => {
@@ -18,7 +15,7 @@ const ImagesSection = () => {
             key={index}
             src={src}
             alt={`head image ${index + 1}`}
-            shouldDisplay={index + 1 === headCount}
+            shouldDisplay={index + 1 === count.headCount}
           />
         );
       })}
@@ -28,7 +25,7 @@ const ImagesSection = () => {
             key={index}
             src={src}
             alt={`body image ${index + 1}`}
-            shouldDisplay={index + 1 === bodyCount}
+            shouldDisplay={index + 1 === count.bodyCount}
           />
         );
       })}
@@ -38,7 +35,7 @@ const ImagesSection = () => {
             key={index}
             src={src}
             alt={`legs image ${index + 1}`}
-            shouldDisplay={index + 1 === legsCount}
+            shouldDisplay={index + 1 === count.legsCount}
           />
         );
       })}

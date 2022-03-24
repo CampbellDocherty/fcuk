@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Random from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
 import Button from './components/Button';
@@ -14,14 +14,19 @@ import {
 } from './styles';
 
 const App: FC = () => {
+  const [count, setCount] = useState({
+    headCount: 1,
+    bodyCount: 1,
+    legsCount: 1,
+  });
   return (
     <Container>
       <Header>
         <TitleImage src={Title} alt="fcuk title" />
       </Header>
       <CharacterSelectorSection>
-        <LeftArrows />
-        <ImagesSection />
+        <LeftArrows count={count} setCount={setCount} />
+        <ImagesSection count={count} />
         <RightArrows />
       </CharacterSelectorSection>
       <Footer>
