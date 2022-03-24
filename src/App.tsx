@@ -1,11 +1,13 @@
 import { FC } from 'react';
-// import Random from './assets/fcuk-random-button.png';
+import Random from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
-// import Button from './components/Button';
+import Button from './components/Button';
 import LeftArrows from './components/LeftArrows';
+import RightArrows from './components/RightArrows';
 import {
   CharacterSelectorSection,
   Container,
+  Footer,
   Header,
   TitleImage,
 } from './styles';
@@ -19,11 +21,14 @@ const App: FC = () => {
       </Header>
       <CharacterSelectorSection>
         <LeftArrows />
+        <RightArrows />
       </CharacterSelectorSection>
       {/* <HeadRow />
         <BodyRow />
         <LegsRow /> */}
-      {/* <Button src={Random} altText={'random button'} /> */}
+      <Footer>
+        <Button src={Random} altText={'random button'} />
+      </Footer>
       {/* </Wrapper> */}
     </Container>
   );

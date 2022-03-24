@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1000px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
 `;
@@ -49,7 +50,7 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
 `;
 
 export const RandomButton = styled.button`
-  width: 60%;
+  width: 30%;
   background-color: white;
   grid-column: 3;
   grid-row: 5;
@@ -98,7 +99,7 @@ export const AspectRatioBoxInside = styled.div`
   height: 100%;
 `;
 
-export const LeftArrowsSection = styled.div`
+export const ArrowsSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,4 +122,12 @@ export const CharacterSelectorSection = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
+`;
+
+export const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
 `;

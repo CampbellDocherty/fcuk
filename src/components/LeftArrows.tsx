@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import LeftArrow from '../assets/fcuk-arrow-left.png';
 import { bodyImages, headImages, legsImages } from '../assets/images';
-import { LeftArrowsSection } from '../styles';
+import { ArrowsSection } from '../styles';
 import Arrow from './Arrow';
 
 const LeftArrows = () => {
@@ -30,7 +30,7 @@ const LeftArrows = () => {
     setLegsCount(legsCount - 1);
   };
   return (
-    <LeftArrowsSection>
+    <ArrowsSection>
       <Arrow
         src={LeftArrow}
         altText={'first left arrow'}
@@ -52,7 +52,7 @@ const LeftArrows = () => {
         column={2}
         onClick={onPreviousLegsClick}
       />
-    </LeftArrowsSection>
+    </ArrowsSection>
   );
 };
 
