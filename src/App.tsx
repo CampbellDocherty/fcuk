@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Random from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
 import Button from './components/Button';
+import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
 import RightArrows from './components/RightArrows';
 import {
@@ -15,21 +16,17 @@ import {
 const App: FC = () => {
   return (
     <Container>
-      {/* <Wrapper> */}
       <Header>
         <TitleImage src={Title} alt="fcuk title" />
       </Header>
       <CharacterSelectorSection>
         <LeftArrows />
+        <ImagesSection />
         <RightArrows />
       </CharacterSelectorSection>
-      {/* <HeadRow />
-        <BodyRow />
-        <LegsRow /> */}
       <Footer>
         <Button src={Random} altText={'random button'} />
       </Footer>
-      {/* </Wrapper> */}
     </Container>
   );
 };

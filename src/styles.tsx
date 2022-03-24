@@ -61,26 +61,17 @@ export const RandomButton = styled.button`
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 2;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 5% 5% 0px 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const BodyImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 3;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 5% 0px 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   width: 100%;
-  grid-column: 3;
-  grid-row: 4;
-  visibility: ${(props) => (props.shouldDisplay ? 'visible' : 'hidden')};
-  padding: 0px 5% 5% 5%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
 export const AspectRatioBox = styled.div`
@@ -130,4 +121,13 @@ export const Footer = styled.div`
   justify-content: center;
   width: 100%;
   height: 20vh;
+`;
+
+export const CharacterImagesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  height: 100%;
 `;
