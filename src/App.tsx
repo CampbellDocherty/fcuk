@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { createRef, FC, useState } from 'react';
 import Title from './assets/fcuk-title.png';
 import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
@@ -14,6 +14,7 @@ import {
 } from './styles';
 
 const App: FC = () => {
+  const ref = createRef();
   const [count, setCount] = useState({
     headCount: 1,
     bodyCount: 1,
@@ -27,12 +28,12 @@ const App: FC = () => {
       </Header>
       <CharacterSelectorSection>
         <LeftArrows count={count} setCount={setCount} />
-        <ImagesSection count={count} />
+        <ImagesSection count={count} ref={ref} />
         <RightArrows count={count} setCount={setCount} />
       </CharacterSelectorSection>
       <Footer>
         <RandomButton count={count} setCount={setCount} />
-        <ScreenshotButton />
+        <ScreenshotButton ref={ref} />
       </Footer>
     </Container>
   );
