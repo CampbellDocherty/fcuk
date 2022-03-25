@@ -5,13 +5,13 @@
     "main.js.map": "/fcuk/static/js/main.1fb4b976.chunk.js.map",
     "runtime-main.js": "/fcuk/static/js/runtime-main.1735d7a2.js",
     "runtime-main.js.map": "/fcuk/static/js/runtime-main.1735d7a2.js.map",
-    "static/js/2.d165db4e.chunk.js": "/fcuk/static/js/2.d165db4e.chunk.js",
-    "static/js/2.d165db4e.chunk.js.map": "/fcuk/static/js/2.d165db4e.chunk.js.map",
+    "static/js/2.c9855bc6.chunk.js": "/fcuk/static/js/2.c9855bc6.chunk.js",
+    "static/js/2.c9855bc6.chunk.js.map": "/fcuk/static/js/2.c9855bc6.chunk.js.map",
     "static/js/3.063dbb87.chunk.js": "/fcuk/static/js/3.063dbb87.chunk.js",
     "static/js/3.063dbb87.chunk.js.map": "/fcuk/static/js/3.063dbb87.chunk.js.map",
     "index.html": "/fcuk/index.html",
     "static/css/main.c4908474.chunk.css.map": "/fcuk/static/css/main.c4908474.chunk.css.map",
-    "static/js/2.d165db4e.chunk.js.LICENSE.txt": "/fcuk/static/js/2.d165db4e.chunk.js.LICENSE.txt",
+    "static/js/2.c9855bc6.chunk.js.LICENSE.txt": "/fcuk/static/js/2.c9855bc6.chunk.js.LICENSE.txt",
     "static/media/body-one-test.ed9e9c90.png": "/fcuk/static/media/body-one-test.ed9e9c90.png",
     "static/media/body-two-test.e3d61626.png": "/fcuk/static/media/body-two-test.e3d61626.png",
     "static/media/fcuk-arrow-left.a709e9df.png": "/fcuk/static/media/fcuk-arrow-left.a709e9df.png",
@@ -25,7 +25,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1735d7a2.js",
-    "static/js/2.d165db4e.chunk.js",
+    "static/js/2.c9855bc6.chunk.js",
     "static/css/main.c4908474.chunk.css",
     "static/js/main.1fb4b976.chunk.js"
   ]
