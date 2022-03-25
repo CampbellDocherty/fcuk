@@ -19,6 +19,7 @@ const App: FC = () => {
     bodyCount: 1,
     legsCount: 1,
   });
+
   return (
     <Container>
       <Header>
@@ -30,7 +31,12 @@ const App: FC = () => {
         <RightArrows count={count} setCount={setCount} />
       </CharacterSelectorSection>
       <Footer>
-        <Button src={Random} altText={'random button'} />
+        <Button
+          count={count}
+          setCount={setCount}
+          src={Random}
+          altText={'random button'}
+        />
       </Footer>
     </Container>
   );
