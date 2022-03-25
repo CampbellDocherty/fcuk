@@ -4,6 +4,7 @@ import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
 import RandomButton from './components/RandomButton';
 import RightArrows from './components/RightArrows';
+import ScreenshotButton from './components/ScreenshotButton';
 import {
   CharacterSelectorSection,
   Container,
@@ -31,6 +32,7 @@ const App: FC = () => {
       </CharacterSelectorSection>
       <Footer>
         <RandomButton count={count} setCount={setCount} />
+        <ScreenshotButton />
       </Footer>
     </Container>
   );
