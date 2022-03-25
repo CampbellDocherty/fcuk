@@ -1,9 +1,8 @@
 import { FC, useState } from 'react';
-import Random from './assets/fcuk-random-button.png';
 import Title from './assets/fcuk-title.png';
-import Button from './components/Button';
 import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
+import RandomButton from './components/RandomButton';
 import RightArrows from './components/RightArrows';
 import {
   CharacterSelectorSection,
@@ -31,12 +30,7 @@ const App: FC = () => {
         <RightArrows count={count} setCount={setCount} />
       </CharacterSelectorSection>
       <Footer>
-        <Button
-          count={count}
-          setCount={setCount}
-          src={Random}
-          altText={'random button'}
-        />
+        <RandomButton count={count} setCount={setCount} />
       </Footer>
     </Container>
   );

@@ -36,7 +36,7 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
   cursor: pointer;
 `;
 
-export const RandomButton = styled.button`
+export const StyledButton = styled.button`
   width: 30%;
   background-color: white;
   grid-column: 3;

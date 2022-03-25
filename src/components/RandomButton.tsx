@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import Random from '../assets/fcuk-random-button.png';
 import { bodyImages, headImages, legsImages } from '../assets/images';
-import { RandomButton, RandomButtonImage } from '../styles';
+import { StyledButton, RandomButtonImage } from '../styles';
 
 const randomIntFromInterval = (min: number, max: number, excluded: number) => {
   const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
@@ -10,14 +11,10 @@ const randomIntFromInterval = (min: number, max: number, excluded: number) => {
   return randomNumber;
 };
 
-const Button = ({
-  src,
-  altText,
+const RandomButton = ({
   count,
   setCount,
 }: {
-  readonly src: any;
-  readonly altText: string;
   readonly count: any;
   readonly setCount: any;
 }) => {
@@ -54,7 +51,7 @@ const Button = ({
   };
 
   return (
-    <RandomButton
+    <StyledButton
       onClick={onClick}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
@@ -62,12 +59,12 @@ const Button = ({
       onKeyUp={onMouseUp}
     >
       <RandomButtonImage
-        src={src}
-        alt={altText}
+        src={Random}
+        alt={'random button'}
         mouseDown={mouseDownOnButton}
       />
-    </RandomButton>
+    </StyledButton>
   );
 };
 
-export default Button;
+export default RandomButton;
