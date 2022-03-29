@@ -9,11 +9,11 @@ const ScreenshotButton = React.forwardRef((props, ref: any) => {
   });
 
   const download = (
-    image: any,
+    screenshot: any,
     { name = 'fcuk-charcter', extension = 'jpg' } = {}
   ) => {
     const a = document.createElement('a');
-    a.href = image;
+    a.href = screenshot;
     a.download = createFileName(extension, name);
     a.click();
   };
