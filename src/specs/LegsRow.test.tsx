@@ -36,13 +36,15 @@ describe('When the user wants to interact with the legs row', () => {
   it('loops back to the beginning when the legs count exceeds the amount of legs images', () => {
     clickArrow('third right arrow');
     clickArrow('third right arrow');
+    clickArrow('third right arrow');
+    clickArrow('third right arrow');
     const firstLegsStyle = getStyles('legs image 1');
     expect(firstLegsStyle.display).toBe('initial');
   });
 
   it('loops to the end when the legs count is lower than 1', () => {
     clickArrow('third left arrow');
-    const lastLegsStyle = getStyles('legs image 2');
+    const lastLegsStyle = getStyles('legs image 4');
     expect(lastLegsStyle.display).toBe('initial');
   });
 });
