@@ -14,18 +14,25 @@ export const TitleImage = styled.img`
   width: 60%;
 `;
 
+export const SubtitleImage = styled.img`
+  width: 40%;
+  max-width: 200px;
+  margin: 16px;
+`;
+
 export const TitleAccentImage = styled.img`
-  width: 80%;
+  width: 90%;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   max-width: 600px;
 `;
 
-export const FcukTitle = styled.h1`
-  position: relative;
+export const FcukTitleImage = styled.img`
   z-index: 100;
   margin: 0;
+  width: 60%;
+  max-width: 450px;
 `;
 
 export const TitleWithAccent = styled.div`

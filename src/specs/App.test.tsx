@@ -15,16 +15,13 @@ describe('When a user lands on the home page', () => {
     ['first right arrow'],
     ['second right arrow'],
     ['third right arrow'],
+    ['no format title'],
+    ['presents title'],
     ['fcuk title'],
     ['title accent'],
     ['random button'],
     ['screenshot button'],
   ])('shows the %s', (altText: string) => {
     screen.getByAltText(altText);
-  });
-
-  it('shows dummy titles', () => {
-    screen.getByText('PRESENTS');
-    screen.getByText('FC-UK');
   });
 });
