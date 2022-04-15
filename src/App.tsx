@@ -1,5 +1,6 @@
 import { createRef, FC, useState } from 'react';
 import Title from './assets/fcuk-title.png';
+import Accent from './assets/title-accent.png';
 import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
 import RandomButton from './components/RandomButton';
@@ -8,9 +9,12 @@ import ScreenshotButton from './components/ScreenshotButton';
 import {
   CharacterSelectorSection,
   Container,
+  FcukTitle,
   Footer,
   Header,
+  TitleAccentImage,
   TitleImage,
+  TitleWithAccent,
 } from './styles';
 
 const App: FC = () => {
@@ -26,7 +30,10 @@ const App: FC = () => {
       <Header>
         <TitleImage src={Title} alt="fcuk title" />
         <h2>PRESENTS</h2>
-        <h1>FC-UK</h1>
+        <TitleWithAccent>
+          <FcukTitle>FC-UK</FcukTitle>
+          <TitleAccentImage src={Accent} alt="title accent" />
+        </TitleWithAccent>
       </Header>
       <CharacterSelectorSection>
         <LeftArrows count={count} setCount={setCount} />

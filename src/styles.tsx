@@ -14,6 +14,27 @@ export const TitleImage = styled.img`
   width: 60%;
 `;
 
+export const TitleAccentImage = styled.img`
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+`;
+
+export const FcukTitle = styled.h1`
+  position: relative;
+  z-index: 100;
+  margin: 0;
+`;
+
+export const TitleWithAccent = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`;
+
 export const ArrowImage = styled.img<{
   readonly mouseDown: boolean;
 }>`

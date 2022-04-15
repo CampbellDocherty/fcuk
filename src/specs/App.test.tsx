@@ -16,6 +16,7 @@ describe('When a user lands on the home page', () => {
     ['second right arrow'],
     ['third right arrow'],
     ['fcuk title'],
+    ['title accent'],
     ['random button'],
   ])('shows the %s', (altText: string) => {
     screen.getByAltText(altText);
@@ -23,5 +24,9 @@ describe('When a user lands on the home page', () => {
 
   it('shows screenshot button', () => {
     screen.getByText('Screenshot');
+  });
+  it('shows dummy titles', () => {
+    screen.getByText('PRESENTS');
+    screen.getByText('FC-UK');
   });
 });
