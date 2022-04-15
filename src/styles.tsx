@@ -125,9 +125,9 @@ export const CharacterSelectorSection = styled.div`
 export const Footer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
-  height: 20vh;
+  margin-bottom: 72px;
 `;
 
 export const CharacterImagesSection = styled.div`
