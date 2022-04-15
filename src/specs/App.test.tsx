@@ -15,7 +15,8 @@ describe('When a user lands on the home page', () => {
     ['first right arrow'],
     ['second right arrow'],
     ['third right arrow'],
-    ['fcuk title'],
+    ['no format title'],
+    ['presents title'],
     ['title accent'],
     ['random button'],
     ['screenshot button'],
@@ -24,7 +25,6 @@ describe('When a user lands on the home page', () => {
   });
 
   it('shows dummy titles', () => {
-    screen.getByText('PRESENTS');
     screen.getByText('FC-UK');
   });
 });

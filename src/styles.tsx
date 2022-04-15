@@ -14,6 +14,12 @@ export const TitleImage = styled.img`
   width: 60%;
 `;
 
+export const SubtitleImage = styled.img`
+  width: 40%;
+  max-width: 200px;
+  margin: 16px;
+`;
+
 export const TitleAccentImage = styled.img`
   width: 80%;
   position: absolute;
