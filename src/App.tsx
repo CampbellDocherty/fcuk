@@ -25,6 +25,8 @@ const App: FC = () => {
     <Container>
       <Header>
         <TitleImage src={Title} alt="fcuk title" />
+        <h2>PRESENTS</h2>
+        <h1>FC-UK</h1>
       </Header>
       <CharacterSelectorSection>
         <LeftArrows count={count} setCount={setCount} />

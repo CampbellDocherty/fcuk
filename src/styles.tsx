@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 1000px;
   height: 100vh;
   margin-left: auto;
@@ -10,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const TitleImage = styled.img`
-  width: 40%;
+  width: 60%;
 `;
 
 export const ArrowImage = styled.img<{
@@ -70,10 +71,11 @@ export const ArrowsSection = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 20vh;
+  margin-top: 48px;
 `;
 
 export const CharacterSelectorSection = styled.div`
