@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c4908474.chunk.css",
-    "main.js": "/static/js/main.73b8957b.chunk.js",
-    "main.js.map": "/static/js/main.73b8957b.chunk.js.map",
+    "main.js": "/static/js/main.b006b751.chunk.js",
+    "main.js.map": "/static/js/main.b006b751.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.2decd3c4.js",
     "runtime-main.js.map": "/static/js/runtime-main.2decd3c4.js.map",
     "static/js/2.00f15209.chunk.js": "/static/js/2.00f15209.chunk.js",
@@ -16,10 +16,10 @@
     "static/media/body-2.7a56817b.png": "/static/media/body-2.7a56817b.png",
     "static/media/body-3.d409b1fe.png": "/static/media/body-3.d409b1fe.png",
     "static/media/body-4.95b39c36.png": "/static/media/body-4.95b39c36.png",
-    "static/media/fcuk-arrow-left.a709e9df.png": "/static/media/fcuk-arrow-left.a709e9df.png",
-    "static/media/fcuk-arrow-right.3bad8883.png": "/static/media/fcuk-arrow-right.3bad8883.png",
+    "static/media/fcuk-arrow-right.c985f20b.png": "/static/media/fcuk-arrow-right.c985f20b.png",
+    "static/media/fcuk-no-format-title.54891661.png": "/static/media/fcuk-no-format-title.54891661.png",
     "static/media/fcuk-random-button.874ac74f.png": "/static/media/fcuk-random-button.874ac74f.png",
-    "static/media/fcuk-title.54891661.png": "/static/media/fcuk-title.54891661.png",
+    "static/media/fcuk-title.1557e429.png": "/static/media/fcuk-title.1557e429.png",
     "static/media/head-1.f4771ba9.png": "/static/media/head-1.f4771ba9.png",
     "static/media/head-2.06218d9c.png": "/static/media/head-2.06218d9c.png",
     "static/media/head-3.e6d590d3.png": "/static/media/head-3.e6d590d3.png",
@@ -28,12 +28,13 @@
     "static/media/legs-2.aecf44fc.png": "/static/media/legs-2.aecf44fc.png",
     "static/media/legs-3.7af9c042.png": "/static/media/legs-3.7af9c042.png",
     "static/media/legs-4.a58a494b.png": "/static/media/legs-4.a58a494b.png",
+    "static/media/presents-title.6bb1be64.png": "/static/media/presents-title.6bb1be64.png",
     "static/media/title-accent.6baac711.png": "/static/media/title-accent.6baac711.png"
   },
   "entrypoints": [
     "static/js/runtime-main.2decd3c4.js",
     "static/js/2.00f15209.chunk.js",
     "static/css/main.c4908474.chunk.css",
-    "static/js/main.73b8957b.chunk.js"
+    "static/js/main.b006b751.chunk.js"
   ]
 }
