@@ -142,12 +142,12 @@ export const CharacterImagesSection = styled.div`
 `;
 
 export const Canvas = styled.canvas`
-  max-width: 1000px;
+  /* max-width: 1000px;
   height: 100vh;
   margin-left: auto;
   margin-right: auto;
   background-color: grey;
-  opacity: 0.4;
+  opacity: 0.4; */
   left: 50%;
   transform: translate(-50%, 0);
   position: absolute;
