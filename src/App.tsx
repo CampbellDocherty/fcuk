@@ -1,5 +1,6 @@
 import { createRef, FC, useState } from 'react';
-import Title from './assets/fcuk-title.png';
+import NoFormatTitle from './assets/fcuk-no-format-title.png';
+import FcukTitle from './assets/fcuk-title.png';
 import PresentsSubtitle from './assets/presents-title.png';
 import Accent from './assets/title-accent.png';
 import ImagesSection from './components/ImagesSection';
@@ -10,7 +11,7 @@ import ScreenshotButton from './components/ScreenshotButton';
 import {
   CharacterSelectorSection,
   Container,
-  FcukTitle,
+  FcukTitleImage,
   Footer,
   Header,
   SubtitleImage,
@@ -30,10 +31,10 @@ const App: FC = () => {
   return (
     <Container>
       <Header>
-        <TitleImage src={Title} alt="no format title" />
+        <TitleImage src={NoFormatTitle} alt="no format title" />
         <SubtitleImage src={PresentsSubtitle} alt="presents title" />
         <TitleWithAccent>
-          <FcukTitle>FC-UK</FcukTitle>
+          <FcukTitleImage src={FcukTitle} alt="fcuk title" />
           <TitleAccentImage src={Accent} alt="title accent" />
         </TitleWithAccent>
       </Header>
