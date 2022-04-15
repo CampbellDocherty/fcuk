@@ -60,14 +60,28 @@ export const RandomButtonImage = styled.img<{ readonly mouseDown: boolean }>`
   cursor: pointer;
 `;
 
+export const ScreenshotButtonImage = styled.img<{
+  readonly mouseDown: boolean;
+}>`
+  width: ${(props) => (props.mouseDown ? '97%' : '100%')};
+  cursor: pointer;
+`;
+
 export const StyledButton = styled.button`
-  width: 30%;
+  max-width: 60px;
   background-color: white;
   grid-column: 3;
   grid-row: 5;
   border: none;
   border-radius: 300px;
   padding: 0;
+
+  :nth-of-type(1) {
+    margin-right: 16px;
+  }
+  :nth-of-type(2) {
+    margin-left: 16px;
+  }
 `;
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
@@ -111,9 +125,9 @@ export const CharacterSelectorSection = styled.div`
 export const Footer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
-  height: 20vh;
+  margin-bottom: 72px;
 `;
 
 export const CharacterImagesSection = styled.div`

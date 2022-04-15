@@ -1,10 +1,14 @@
 /* eslint-disable functional/immutable-data */
 import { getStorage, ref as storageRef, uploadString } from 'firebase/storage';
-import React from 'react';
+import React, { useState } from 'react';
 import { useScreenshot, createFileName } from 'use-react-screenshot';
+import Screenshot from '../assets/fcuk-screenshot-button.png';
 import firebaseApp from '../firebase';
+import { ScreenshotButtonImage, StyledButton } from '../styles';
 
 const ScreenshotButton = React.forwardRef((props, ref: any) => {
+  const [mouseDownOnButton, setMouseDownOnButton] = useState(false);
+
   const firebaseStorage = getStorage(firebaseApp);
   const [, takeScreenShot] = useScreenshot({
     type: 'image/jpeg',
@@ -33,7 +37,28 @@ const ScreenshotButton = React.forwardRef((props, ref: any) => {
   const downloadScreenshot = () =>
     takeScreenShot(ref.current).then(download).then(upload);
 
-  return <button onClick={downloadScreenshot}>Screenshot</button>;
+  const onMouseDown = () => {
+    setMouseDownOnButton(true);
+  };
+  const onMouseUp = () => {
+    setMouseDownOnButton(false);
+  };
+
+  return (
+    <StyledButton
+      onClick={downloadScreenshot}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onKeyDown={onMouseDown}
+      onKeyUp={onMouseUp}
+    >
+      <ScreenshotButtonImage
+        src={Screenshot}
+        alt={'screenshot button'}
+        mouseDown={mouseDownOnButton}
+      />
+    </StyledButton>
+  );
 });
 
 export default ScreenshotButton;

@@ -18,13 +18,11 @@ describe('When a user lands on the home page', () => {
     ['fcuk title'],
     ['title accent'],
     ['random button'],
+    ['screenshot button'],
   ])('shows the %s', (altText: string) => {
     screen.getByAltText(altText);
   });
 
-  it('shows screenshot button', () => {
-    screen.getByText('Screenshot');
-  });
   it('shows dummy titles', () => {
     screen.getByText('PRESENTS');
     screen.getByText('FC-UK');
