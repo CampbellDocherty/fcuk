@@ -19,6 +19,7 @@ export const TitleAccentImage = styled.img`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
+  max-width: 600px;
 `;
 
 export const FcukTitle = styled.h1`
@@ -44,6 +45,7 @@ export const ArrowImage = styled.img<{
 
 export const ArrowButton = styled.button`
   width: 70%;
+  max-width: 150px;
   background-color: white;
   padding: 0;
   border: none;
