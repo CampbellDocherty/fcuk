@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 1000px;
   height: 100vh;
   margin-left: auto;
@@ -10,7 +11,29 @@ export const Container = styled.div`
 `;
 
 export const TitleImage = styled.img`
-  width: 40%;
+  width: 60%;
+`;
+
+export const TitleAccentImage = styled.img`
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 600px;
+`;
+
+export const FcukTitle = styled.h1`
+  position: relative;
+  z-index: 100;
+  margin: 0;
+`;
+
+export const TitleWithAccent = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 `;
 
 export const ArrowImage = styled.img<{
@@ -22,6 +45,7 @@ export const ArrowImage = styled.img<{
 
 export const ArrowButton = styled.button`
   width: 70%;
+  max-width: 150px;
   background-color: white;
   padding: 0;
   border: none;
@@ -70,10 +94,11 @@ export const ArrowsSection = styled.div`
 
 export const Header = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 20vh;
+  margin-top: 48px;
 `;
 
 export const CharacterSelectorSection = styled.div`
