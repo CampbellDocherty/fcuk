@@ -51,7 +51,7 @@ export const ArrowImage = styled.img<{
 `;
 
 export const ArrowButton = styled.button`
-  width: 70%;
+  width: 80%;
   max-width: 150px;
   background-color: white;
   padding: 0;
@@ -80,15 +80,7 @@ export const StyledButton = styled.button`
   grid-column: 3;
   grid-row: 5;
   border: none;
-  border-radius: 300px;
   padding: 0;
-
-  :nth-of-type(1) {
-    margin-right: 16px;
-  }
-  :nth-of-type(2) {
-    margin-left: 16px;
-  }
 `;
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
@@ -119,7 +111,7 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 48px;
+  margin-top: 24px;
 `;
 
 export const CharacterSelectorSection = styled.div`
@@ -127,6 +119,8 @@ export const CharacterSelectorSection = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
 `;
 
 export const Footer = styled.div`
@@ -135,6 +129,7 @@ export const Footer = styled.div`
   justify-content: space-evenly;
   width: 100%;
   margin-bottom: 72px;
+  margin-top: 8px;
 `;
 
 export const CharacterImagesSection = styled.div`
@@ -144,4 +139,17 @@ export const CharacterImagesSection = styled.div`
   justify-content: center;
   max-width: 400px;
   height: 100%;
+`;
+
+export const Canvas = styled.canvas`
+  max-width: 1000px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: grey;
+  opacity: 0.4;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  z-index: -100;
 `;
