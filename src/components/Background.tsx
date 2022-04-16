@@ -37,11 +37,11 @@ const Background = () => {
         canvas.style.height = window.innerHeight + 'px';
         context.scale(dpi, dpi);
       };
+
+      scaleCanvas();
       backgroundImages.forEach((backgroundImage) =>
         window.requestAnimationFrame(() => draw(backgroundImage))
       );
-
-      scaleCanvas();
     }
   }, []);
 

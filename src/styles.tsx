@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   max-width: 1000px;
   height: 100vh;
   margin-left: auto;
@@ -12,11 +13,12 @@ export const Container = styled.div`
 
 export const TitleImage = styled.img`
   width: 60%;
+  max-width: 200px;
 `;
 
 export const SubtitleImage = styled.img`
   width: 40%;
-  max-width: 200px;
+  max-width: 100px;
   margin: 16px;
 `;
 
@@ -25,14 +27,14 @@ export const TitleAccentImage = styled.img`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  max-width: 600px;
+  max-width: 500px;
 `;
 
 export const FcukTitleImage = styled.img`
   z-index: 100;
   margin: 0;
   width: 60%;
-  max-width: 450px;
+  max-width: 250px;
 `;
 
 export const TitleWithAccent = styled.div`
@@ -75,7 +77,7 @@ export const ScreenshotButtonImage = styled.img<{
 `;
 
 export const StyledButton = styled.button`
-  max-width: 60px;
+  max-width: 50px;
   background-color: white;
   grid-column: 3;
   grid-row: 5;
@@ -111,16 +113,17 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 24px;
+  margin-top: 16px;
 `;
 
 export const CharacterSelectorSection = styled.div`
   display: flex;
   width: 100%;
+  max-width: 500px;
   align-items: center;
   justify-content: center;
-  margin-top: 8px;
   margin-bottom: 8px;
+  margin-top: 16px;
 `;
 
 export const Footer = styled.div`
@@ -128,6 +131,7 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  max-width: 500px;
   margin-bottom: 72px;
   margin-top: 8px;
 `;
