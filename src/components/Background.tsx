@@ -2,14 +2,8 @@
 
 /* eslint-disable functional/immutable-data */
 import { useEffect, useRef } from 'react';
-import Eman1 from '../assets/eman-1.png';
+import { backgroundImages } from '../backgroundImages';
 import { Canvas } from '../styles';
-
-let x = 0;
-let y = 0;
-
-let xSpeed = 1;
-let ySpeed = 0.7;
 
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,40 +12,36 @@ const Background = () => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext('2d');
     if (canvas && context) {
-      const draw = () => {
+      context.fillStyle = 'white';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      const draw = (backgroundImage: any) => {
+        let { src, x, y, xSpeed, ySpeed, width, height } = backgroundImage;
         x = x + xSpeed;
         y = y + ySpeed;
 
         const image = new Image();
-        image.src = Eman1;
+        image.src = src;
 
         if (x > canvas.width - image.width || x < 0) xSpeed = -xSpeed;
         if (y > canvas.height - image.height || y < 0) ySpeed = -ySpeed;
 
-        // context.fillStyle = '#333';
-        // context.fillRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(image, x, y, width, height);
 
-        // context.fillStyle = '#eee';
-        // context.fillRect(x, y, 20, 20);
-
-        context.drawImage(image, x, y);
-
-        window.requestAnimationFrame(draw);
+        window.requestAnimationFrame(() => draw(backgroundImage));
       };
-
       const scaleCanvas = () => {
-        // const dpi = window.devicePixelRatio;
-        const dpi = 1;
+        const dpi = window.devicePixelRatio;
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = window.innerHeight + 'px';
-
         context.scale(dpi, dpi);
       };
+      backgroundImages.forEach((backgroundImage) =>
+        window.requestAnimationFrame(() => draw(backgroundImage))
+      );
 
       scaleCanvas();
-      window.requestAnimationFrame(draw);
     }
   }, []);
 
