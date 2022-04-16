@@ -4,19 +4,22 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   max-width: 1000px;
   height: 100vh;
+  max-height: 1200px;
   margin-left: auto;
   margin-right: auto;
 `;
 
 export const TitleImage = styled.img`
   width: 60%;
+  max-width: 200px;
 `;
 
 export const SubtitleImage = styled.img`
   width: 40%;
-  max-width: 200px;
+  max-width: 100px;
   margin: 16px;
 `;
 
@@ -25,14 +28,14 @@ export const TitleAccentImage = styled.img`
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
-  max-width: 600px;
+  max-width: 500px;
 `;
 
 export const FcukTitleImage = styled.img`
   z-index: 100;
   margin: 0;
   width: 60%;
-  max-width: 450px;
+  max-width: 250px;
 `;
 
 export const TitleWithAccent = styled.div`
@@ -51,7 +54,7 @@ export const ArrowImage = styled.img<{
 `;
 
 export const ArrowButton = styled.button`
-  width: 70%;
+  width: 80%;
   max-width: 150px;
   background-color: white;
   padding: 0;
@@ -75,20 +78,12 @@ export const ScreenshotButtonImage = styled.img<{
 `;
 
 export const StyledButton = styled.button`
-  max-width: 60px;
+  max-width: 50px;
   background-color: white;
   grid-column: 3;
   grid-row: 5;
   border: none;
-  border-radius: 300px;
   padding: 0;
-
-  :nth-of-type(1) {
-    margin-right: 16px;
-  }
-  :nth-of-type(2) {
-    margin-left: 16px;
-  }
 `;
 
 export const HeadImage = styled.img<{ readonly shouldDisplay: boolean }>`
@@ -119,14 +114,17 @@ export const Header = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 48px;
+  margin-top: 16px;
 `;
 
 export const CharacterSelectorSection = styled.div`
   display: flex;
   width: 100%;
+  max-width: 500px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 8px;
+  margin-top: 16px;
 `;
 
 export const Footer = styled.div`
@@ -134,7 +132,9 @@ export const Footer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  max-width: 500px;
   margin-bottom: 72px;
+  margin-top: 8px;
 `;
 
 export const CharacterImagesSection = styled.div`
@@ -144,4 +144,12 @@ export const CharacterImagesSection = styled.div`
   justify-content: center;
   max-width: 400px;
   height: 100%;
+`;
+
+export const Canvas = styled.canvas`
+  opacity: 0.4;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  z-index: -100;
 `;

@@ -3,6 +3,7 @@ import NoFormatTitle from './assets/fcuk-no-format-title.png';
 import FcukTitle from './assets/fcuk-title.png';
 import PresentsSubtitle from './assets/presents-title.png';
 import Accent from './assets/title-accent.png';
+import Background from './components/Background';
 import ImagesSection from './components/ImagesSection';
 import LeftArrows from './components/LeftArrows';
 import RandomButton from './components/RandomButton';
@@ -29,25 +30,28 @@ const App: FC = () => {
   });
 
   return (
-    <Container>
-      <Header>
-        <TitleImage src={NoFormatTitle} alt="no format title" />
-        <SubtitleImage src={PresentsSubtitle} alt="presents title" />
-        <TitleWithAccent>
-          <FcukTitleImage src={FcukTitle} alt="fcuk title" />
-          <TitleAccentImage src={Accent} alt="title accent" />
-        </TitleWithAccent>
-      </Header>
-      <CharacterSelectorSection>
-        <LeftArrows count={count} setCount={setCount} />
-        <ImagesSection count={count} ref={ref} />
-        <RightArrows count={count} setCount={setCount} />
-      </CharacterSelectorSection>
-      <Footer>
-        <RandomButton count={count} setCount={setCount} />
-        <ScreenshotButton ref={ref} />
-      </Footer>
-    </Container>
+    <>
+      <Background />
+      <Container>
+        <Header>
+          <TitleImage src={NoFormatTitle} alt="no format title" />
+          <SubtitleImage src={PresentsSubtitle} alt="presents title" />
+          <TitleWithAccent>
+            <FcukTitleImage src={FcukTitle} alt="fcuk title" />
+            <TitleAccentImage src={Accent} alt="title accent" />
+          </TitleWithAccent>
+        </Header>
+        <CharacterSelectorSection>
+          <LeftArrows count={count} setCount={setCount} />
+          <ImagesSection count={count} ref={ref} />
+          <RightArrows count={count} setCount={setCount} />
+        </CharacterSelectorSection>
+        <Footer>
+          <RandomButton count={count} setCount={setCount} />
+          <ScreenshotButton ref={ref} />
+        </Footer>
+      </Container>
+    </>
   );
 };
 
