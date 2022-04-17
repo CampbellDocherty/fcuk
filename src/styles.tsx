@@ -102,6 +102,11 @@ export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
+export const FaceImage = styled.img<{ readonly shouldDisplay: boolean }>`
+  width: 100%;
+  display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
+`;
+
 export const OutfitArrowsSection = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;

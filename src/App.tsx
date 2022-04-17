@@ -6,8 +6,9 @@ import Accent from './assets/title-accent.png';
 import Background from './components/Background';
 import RandomButton from './components/RandomButton';
 import ScreenshotButton from './components/ScreenshotButton';
-// import FacesLeftArrows from './components/faces/FacesLeftArrows';
-// import FacesRightArrows from './components/faces/FacesRightArrows';
+import FaceImages from './components/faces/FaceImages';
+import FacesLeftArrows from './components/faces/FacesLeftArrows';
+import FacesRightArrows from './components/faces/FacesRightArrows';
 import ImagesSection from './components/outfits/ImagesSection';
 import LeftArrows from './components/outfits/LeftArrows';
 import RightArrows from './components/outfits/RightArrows';
@@ -31,11 +32,15 @@ const App: FC = () => {
     legsCount: 1,
   });
 
-  // const [isFaces, setIsFaces] = useState(false);
+  const [isFaces, setIsFaces] = useState(false);
 
-  // const onClick = () => {
-  //   setIsFaces(!isFaces);
-  // };
+  const onClick = () => {
+    setIsFaces(!isFaces);
+  };
+
+  const [facesCount, setFacesCount] = useState({
+    faceCount: 1,
+  });
 
   return (
     <>
@@ -49,24 +54,28 @@ const App: FC = () => {
             <TitleAccentImage src={Accent} alt="title accent" />
           </TitleWithAccent>
         </Header>
-        {/* {isFaces ? (
+        {isFaces ? (
           <CharacterSelectorSection>
-            <FacesLeftArrows />
+            <FacesLeftArrows
+              facesCount={facesCount}
+              setFacesCount={setFacesCount}
+            />
+            <FaceImages facesCount={facesCount} ref={ref} />
             <FacesRightArrows />
           </CharacterSelectorSection>
-        ) : ( */}
-        <CharacterSelectorSection>
-          <LeftArrows count={count} setCount={setCount} />
-          <ImagesSection count={count} ref={ref} />
-          <RightArrows count={count} setCount={setCount} />
-        </CharacterSelectorSection>
-        {/* )} */}
+        ) : (
+          <CharacterSelectorSection>
+            <LeftArrows count={count} setCount={setCount} />
+            <ImagesSection count={count} ref={ref} />
+            <RightArrows count={count} setCount={setCount} />
+          </CharacterSelectorSection>
+        )}
         <Footer>
           <RandomButton count={count} setCount={setCount} />
           <ScreenshotButton ref={ref} />
-          {/* <button type="button" onClick={onClick}>
+          <button type="button" onClick={onClick}>
             Faces
-          </button> */}
+          </button>
         </Footer>
       </Container>
     </>
