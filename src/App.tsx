@@ -41,7 +41,6 @@ const App: FC = () => {
             <TitleAccentImage src={Accent} alt="title accent" />
           </TitleWithAccent>
         </Header>
-
         <CharacterSelectorSection>
           <LeftArrows count={count} setCount={setCount} />
           <ImagesSection count={count} ref={ref} />

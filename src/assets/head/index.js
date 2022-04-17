@@ -82,4 +82,7 @@ export const headImages = [
   Head39,
   Head40,
   Head41,
-];
+]
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
