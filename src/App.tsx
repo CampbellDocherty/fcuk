@@ -29,6 +29,12 @@ const App: FC = () => {
     legsCount: 1,
   });
 
+  const [isFaces, setIsFaces] = useState(false);
+
+  const onClick = () => {
+    setIsFaces(!isFaces);
+  };
+
   return (
     <>
       <Background />
@@ -41,14 +47,21 @@ const App: FC = () => {
             <TitleAccentImage src={Accent} alt="title accent" />
           </TitleWithAccent>
         </Header>
-        <CharacterSelectorSection>
-          <LeftArrows count={count} setCount={setCount} />
-          <ImagesSection count={count} ref={ref} />
-          <RightArrows count={count} setCount={setCount} />
-        </CharacterSelectorSection>
+        {isFaces ? (
+          <CharacterSelectorSection></CharacterSelectorSection>
+        ) : (
+          <CharacterSelectorSection>
+            <LeftArrows count={count} setCount={setCount} />
+            <ImagesSection count={count} ref={ref} />
+            <RightArrows count={count} setCount={setCount} />
+          </CharacterSelectorSection>
+        )}
         <Footer>
           <RandomButton count={count} setCount={setCount} />
           <ScreenshotButton ref={ref} />
+          <button type="button" onClick={onClick}>
+            Faces
+          </button>
         </Footer>
       </Container>
     </>

@@ -2,7 +2,7 @@ import { bodyImages } from '../assets/body';
 import LeftArrow from '../assets/fcuk-arrow-left.png';
 import { headImages } from '../assets/head';
 import { legsImages } from '../assets/legs';
-import { ArrowsSection } from '../styles';
+import { OutfitArrowsSection } from '../styles';
 import Arrow from './Arrow';
 
 const LeftArrows = ({
@@ -33,7 +33,7 @@ const LeftArrows = ({
     setCount({ ...count, legsCount: count.legsCount - 1 });
   };
   return (
-    <ArrowsSection>
+    <OutfitArrowsSection>
       <Arrow
         src={LeftArrow}
         altText={'first left arrow'}
@@ -49,7 +49,7 @@ const LeftArrows = ({
         altText={'third left arrow'}
         onClick={onPreviousLegsClick}
       />
-    </ArrowsSection>
+    </OutfitArrowsSection>
   );
 };
 

@@ -102,9 +102,16 @@ export const LegsImage = styled.img<{ readonly shouldDisplay: boolean }>`
   display: ${(props) => (props.shouldDisplay ? 'initial' : 'none')};
 `;
 
-export const ArrowsSection = styled.div`
+export const OutfitArrowsSection = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  max-width: 150px;
+  height: 100%;
+`;
+
+export const FacesArrowsSection = styled.div`
+  display: grid;
+  grid-template-rows: 2fr 2fr 1fr;
   max-width: 150px;
   height: 100%;
 `;
@@ -126,6 +133,7 @@ export const CharacterSelectorSection = styled.div`
   justify-content: center;
   margin-bottom: 8px;
   margin-top: 16px;
+  background: transparent;
 `;
 
 export const Footer = styled.div`
@@ -145,6 +153,16 @@ export const CharacterImagesSection = styled.div`
   justify-content: center;
   max-width: 400px;
   height: 100%;
+`;
+
+export const FacesImagesSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px;
+  height: 100%;
+  border: 1px solid black;
 `;
 
 export const Canvas = styled.canvas`
