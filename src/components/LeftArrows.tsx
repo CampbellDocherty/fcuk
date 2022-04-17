@@ -1,5 +1,7 @@
+import { bodyImages } from '../assets/body';
 import LeftArrow from '../assets/fcuk-arrow-left.png';
-import { bodyImages, headImages, legsImages } from '../assets/images';
+import { headImages } from '../assets/head';
+import { legsImages } from '../assets/legs';
 import { ArrowsSection } from '../styles';
 import Arrow from './Arrow';
 

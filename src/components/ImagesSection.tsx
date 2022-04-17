@@ -1,5 +1,7 @@
 import React from 'react';
-import { bodyImages, headImages, legsImages } from '../assets/images';
+import { bodyImages } from '../assets/body';
+import { headImages } from '../assets/head';
+import { legsImages } from '../assets/legs';
 import {
   BodyImage,
   CharacterImagesSection,
