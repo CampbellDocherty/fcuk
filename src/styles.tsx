@@ -109,13 +109,6 @@ export const OutfitArrowsSection = styled.div`
   height: 100%;
 `;
 
-export const FacesArrowsSection = styled.div`
-  display: grid;
-  grid-template-rows: 2fr 2fr 1fr;
-  max-width: 150px;
-  height: 100%;
-`;
-
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
@@ -153,16 +146,6 @@ export const CharacterImagesSection = styled.div`
   justify-content: center;
   max-width: 400px;
   height: 100%;
-`;
-
-export const FacesImagesSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 400px;
-  height: 100%;
-  border: 1px solid black;
 `;
 
 export const Canvas = styled.canvas`
