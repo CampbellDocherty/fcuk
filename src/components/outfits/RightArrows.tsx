@@ -1,9 +1,9 @@
-import { bodyImages } from '../assets/body';
-import RightArrow from '../assets/fcuk-arrow-right.png';
-import { headImages } from '../assets/head';
-import { legsImages } from '../assets/legs';
-import { ArrowsSection } from '../styles';
-import Arrow from './Arrow';
+import { bodyImages } from '../../assets/body';
+import RightArrow from '../../assets/fcuk-arrow-right.png';
+import { headImages } from '../../assets/head';
+import { legsImages } from '../../assets/legs';
+import { OutfitArrowsSection } from '../../styles';
+import Arrow from '../Arrow';
 
 const RightArrows = ({
   count,
@@ -34,7 +34,7 @@ const RightArrows = ({
   };
 
   return (
-    <ArrowsSection>
+    <OutfitArrowsSection>
       <Arrow
         src={RightArrow}
         altText={'first right arrow'}
@@ -50,7 +50,7 @@ const RightArrows = ({
         altText={'third right arrow'}
         onClick={onNextLegsClick}
       />
-    </ArrowsSection>
+    </OutfitArrowsSection>
   );
 };
 

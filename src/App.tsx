@@ -4,11 +4,13 @@ import FcukTitle from './assets/fcuk-title.png';
 import PresentsSubtitle from './assets/presents-title.png';
 import Accent from './assets/title-accent.png';
 import Background from './components/Background';
-import ImagesSection from './components/ImagesSection';
-import LeftArrows from './components/LeftArrows';
 import RandomButton from './components/RandomButton';
-import RightArrows from './components/RightArrows';
 import ScreenshotButton from './components/ScreenshotButton';
+// import FacesLeftArrows from './components/faces/FacesLeftArrows';
+// import FacesRightArrows from './components/faces/FacesRightArrows';
+import ImagesSection from './components/outfits/ImagesSection';
+import LeftArrows from './components/outfits/LeftArrows';
+import RightArrows from './components/outfits/RightArrows';
 import {
   CharacterSelectorSection,
   Container,
@@ -29,6 +31,12 @@ const App: FC = () => {
     legsCount: 1,
   });
 
+  // const [isFaces, setIsFaces] = useState(false);
+
+  // const onClick = () => {
+  //   setIsFaces(!isFaces);
+  // };
+
   return (
     <>
       <Background />
@@ -41,14 +49,24 @@ const App: FC = () => {
             <TitleAccentImage src={Accent} alt="title accent" />
           </TitleWithAccent>
         </Header>
+        {/* {isFaces ? (
+          <CharacterSelectorSection>
+            <FacesLeftArrows />
+            <FacesRightArrows />
+          </CharacterSelectorSection>
+        ) : ( */}
         <CharacterSelectorSection>
           <LeftArrows count={count} setCount={setCount} />
           <ImagesSection count={count} ref={ref} />
           <RightArrows count={count} setCount={setCount} />
         </CharacterSelectorSection>
+        {/* )} */}
         <Footer>
           <RandomButton count={count} setCount={setCount} />
           <ScreenshotButton ref={ref} />
+          {/* <button type="button" onClick={onClick}>
+            Faces
+          </button> */}
         </Footer>
       </Container>
     </>
