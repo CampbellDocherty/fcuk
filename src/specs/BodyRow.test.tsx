@@ -16,17 +16,17 @@ describe('When the user wants to interact with the body row', () => {
     }
   );
 
-  it('shows next body image when the right arrow is clicked', () => {
-    clickArrow('second right arrow');
+  it('shows next body image when the right arrow is clicked', async () => {
+    await clickArrow('second right arrow');
     const firstBodyStyle = getStyles('body image 1');
     const secondBodyStyle = getStyles('body image 2');
     expect(firstBodyStyle.display).toBe('none');
     expect(secondBodyStyle.display).toBe('initial');
   });
 
-  it('shows previous body image when the left arrow is clicked', () => {
-    clickArrow('second right arrow');
-    clickArrow('second left arrow');
+  it('shows previous body image when the left arrow is clicked', async () => {
+    await clickArrow('second right arrow');
+    await clickArrow('second left arrow');
     const firstBodyStyle = getStyles('body image 1');
     const secondBodyStyle = getStyles('body image 2');
     expect(firstBodyStyle.display).toBe('initial');
@@ -39,8 +39,8 @@ describe('When the user wants to interact with the body row', () => {
     expect(firstBodyStyle.display).toBe('initial');
   });
 
-  it('loops to the end when the body count is lower than 1', () => {
-    clickArrow('second left arrow');
+  it('loops to the end when the body count is lower than 1', async () => {
+    await clickArrow('second left arrow');
     const lastBodyStyle = getStyles('body image 41');
     expect(lastBodyStyle.display).toBe('initial');
   });

@@ -5,31 +5,31 @@ import App from '../App';
 import { getStyles, getVisibleImage } from './helpers';
 
 describe('When a user clicks the random button', () => {
-  beforeEach(() => {
+  beforeEach(async () => {
     render(<App />);
   });
   afterEach(cleanup);
 
-  it('randomises the head shown', () => {
+  it('randomises the head shown', async () => {
     const visibleHead = getVisibleImage('head-image');
     const randomButton = screen.getByAltText('random button');
-    userEvent.click(randomButton);
+    await userEvent.click(randomButton);
     const style = getStyles(visibleHead);
     expect(style.display).toBe('none');
   });
 
-  it('randomises the body shown', () => {
+  it('randomises the body shown', async () => {
     const visibleBody = getVisibleImage('body-image');
     const randomButton = screen.getByAltText('random button');
-    userEvent.click(randomButton);
+    await userEvent.click(randomButton);
     const style = getStyles(visibleBody);
     expect(style.display).toBe('none');
   });
 
-  it('randomises the legs shown', () => {
+  it('randomises the legs shown', async () => {
     const visibleLegs = getVisibleImage('body-image');
     const randomButton = screen.getByAltText('random button');
-    userEvent.click(randomButton);
+    await userEvent.click(randomButton);
     const style = getStyles(visibleLegs);
     expect(style.display).toBe('none');
   });

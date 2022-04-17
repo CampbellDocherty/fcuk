@@ -16,17 +16,17 @@ describe('When the user wants to interact with the legs row', () => {
     }
   );
 
-  it('shows next legs image when the right arrow is clicked', () => {
-    clickArrow('third right arrow');
+  it('shows next legs image when the right arrow is clicked', async () => {
+    await clickArrow('third right arrow');
     const firstLegsStyle = getStyles('legs image 1');
     const secondLegsStyle = getStyles('legs image 2');
     expect(firstLegsStyle.display).toBe('none');
     expect(secondLegsStyle.display).toBe('initial');
   });
 
-  it('shows previous legs image when the left arrow is clicked', () => {
-    clickArrow('third right arrow');
-    clickArrow('third left arrow');
+  it('shows previous legs image when the left arrow is clicked', async () => {
+    await clickArrow('third right arrow');
+    await clickArrow('third left arrow');
     const firstLegsStyle = getStyles('legs image 1');
     const secondLegsStyle = getStyles('legs image 2');
     expect(firstLegsStyle.display).toBe('initial');
@@ -39,8 +39,8 @@ describe('When the user wants to interact with the legs row', () => {
     expect(firstLegsStyle.display).toBe('initial');
   });
 
-  it('loops to the end when the legs count is lower than 1', () => {
-    clickArrow('third left arrow');
+  it('loops to the end when the legs count is lower than 1', async () => {
+    await clickArrow('third left arrow');
     const lastLegsStyle = getStyles('legs image 33');
     expect(lastLegsStyle.display).toBe('initial');
   });
