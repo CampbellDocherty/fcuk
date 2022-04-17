@@ -1,13 +1,13 @@
 import React from 'react';
-import { bodyImages } from '../assets/body';
-import { headImages } from '../assets/head';
-import { legsImages } from '../assets/legs';
+import { bodyImages } from '../../assets/body';
+import { headImages } from '../../assets/head';
+import { legsImages } from '../../assets/legs';
 import {
   BodyImage,
   CharacterImagesSection,
   HeadImage,
   LegsImage,
-} from '../styles';
+} from '../../styles';
 
 const ImagesSection = React.forwardRef(
   ({ count }: { readonly count: any }, ref: any) => {

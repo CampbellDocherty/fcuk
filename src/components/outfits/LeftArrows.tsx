@@ -1,9 +1,9 @@
-import { bodyImages } from '../assets/body';
-import LeftArrow from '../assets/fcuk-arrow-left.png';
-import { headImages } from '../assets/head';
-import { legsImages } from '../assets/legs';
-import { OutfitArrowsSection } from '../styles';
-import Arrow from './Arrow';
+import { bodyImages } from '../../assets/body';
+import LeftArrow from '../../assets/fcuk-arrow-left.png';
+import { headImages } from '../../assets/head';
+import { legsImages } from '../../assets/legs';
+import { OutfitArrowsSection } from '../../styles';
+import Arrow from '../Arrow';
 
 const LeftArrows = ({
   count,
