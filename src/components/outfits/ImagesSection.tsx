@@ -16,6 +16,7 @@ const ImagesSection = React.forwardRef(
         {headImages.map((src, index) => {
           return (
             <HeadImage
+              data-testid={'head-image'}
               key={index}
               src={src}
               alt={`head image ${index + 1}`}
@@ -26,6 +27,7 @@ const ImagesSection = React.forwardRef(
         {bodyImages.map((src, index) => {
           return (
             <BodyImage
+              data-testid={'body-image'}
               key={index}
               src={src}
               alt={`body image ${index + 1}`}
@@ -36,6 +38,7 @@ const ImagesSection = React.forwardRef(
         {legsImages.map((src, index) => {
           return (
             <LegsImage
+              data-testid={'legs-image'}
               key={index}
               src={src}
               alt={`legs image ${index + 1}`}

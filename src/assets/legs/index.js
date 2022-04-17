@@ -66,4 +66,7 @@ export const legsImages = [
   Legs38,
   Legs39,
   Legs41,
-];
+]
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);

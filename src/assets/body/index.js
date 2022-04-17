@@ -82,4 +82,7 @@ export const bodyImages = [
   Body39,
   Body40,
   Body41,
-];
+]
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
