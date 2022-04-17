@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { bodyImages } from '../assets/body';
 import Random from '../assets/fcuk-random-button.png';
-import { bodyImages, headImages, legsImages } from '../assets/images';
+import { headImages } from '../assets/head';
+import { legsImages } from '../assets/legs';
 import { StyledButton, RandomButtonImage } from '../styles';
 
 const randomIntFromInterval = (min: number, max: number, excluded: number) => {
