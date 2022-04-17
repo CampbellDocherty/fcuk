@@ -35,17 +35,14 @@ describe('When the user wants to interact with the head row', () => {
   });
 
   it('loops back to the beginning when the head count exceeds the amount of head images', () => {
-    clickArrow('first right arrow');
-    clickArrow('first right arrow');
-    clickArrow('first right arrow');
-    clickArrow('first right arrow');
+    Array.from(Array(41)).forEach(() => clickArrow('first right arrow'));
     const firstHeadStyle = getStyles('head image 1');
     expect(firstHeadStyle.display).toBe('initial');
   });
 
   it('loops to the end when the head count is lower than 1', () => {
     clickArrow('first left arrow');
-    const lastHeadStyle = getStyles('head image 4');
+    const lastHeadStyle = getStyles('head image 41');
     expect(lastHeadStyle.display).toBe('initial');
   });
 });
