@@ -51,12 +51,13 @@ export const ArrowImage = styled.img<{
 }>`
   width: ${(props) => (props.mouseDown ? '97%' : '100%')};
   cursor: pointer;
+  background: transparent;
 `;
 
 export const ArrowButton = styled.button`
   width: 80%;
   max-width: 150px;
-  background-color: white;
+  background-color: transparent;
   padding: 0;
   border: none;
   display: flex;
@@ -79,7 +80,7 @@ export const ScreenshotButtonImage = styled.img<{
 
 export const StyledButton = styled.button`
   max-width: 50px;
-  background-color: white;
+  background-color: transparent;
   grid-column: 3;
   grid-row: 5;
   border: none;
