@@ -24,6 +24,8 @@ const Arrow = ({
       onClick={onClick}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
+      onTouchStart={onMouseDown}
+      onTouchEnd={onMouseUp}
     >
       <ArrowImage mouseDown={mouseDown} src={src} alt={altText} />
     </ArrowButton>

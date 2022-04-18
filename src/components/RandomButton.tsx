@@ -59,6 +59,8 @@ const RandomButton = ({
       onMouseUp={onMouseUp}
       onKeyDown={onMouseDown}
       onKeyUp={onMouseUp}
+      onTouchEnd={onMouseUp}
+      onTouchStart={onMouseDown}
     >
       <RandomButtonImage
         src={Random}

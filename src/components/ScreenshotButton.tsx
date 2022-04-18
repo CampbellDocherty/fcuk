@@ -51,6 +51,8 @@ const ScreenshotButton = React.forwardRef((props, ref: any) => {
       onMouseUp={onMouseUp}
       onKeyDown={onMouseDown}
       onKeyUp={onMouseUp}
+      onTouchEnd={onMouseUp}
+      onTouchStart={onMouseDown}
     >
       <ScreenshotButtonImage
         src={Screenshot}
