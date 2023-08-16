@@ -1,12 +1,10 @@
 import { screen } from '@testing-library/react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { getStyles, getVisibleImage } from './helpers';
 
 describe('When a user clicks the random button', () => {
-  afterEach(cleanup);
-
   it('randomises the head shown', async () => {
     render(<App />);
     const visibleHead = getVisibleImage('head-image');

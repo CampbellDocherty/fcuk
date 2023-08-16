@@ -1,11 +1,9 @@
 import { screen } from '@testing-library/react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from '../App';
 import { clickArrow, getStyles } from './helpers';
 
 describe('When the user wants to interact with the head row', () => {
-  afterEach(cleanup);
-
   it.each([['head image 1'], ['head image 2']])(
     'shows the head image: %s',
     (altText: string) => {

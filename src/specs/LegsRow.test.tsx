@@ -1,10 +1,8 @@
-import { cleanup, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from '../App';
 import { clickArrow, getStyles } from './helpers';
 
 describe('When the user wants to interact with the legs row', () => {
-  afterEach(cleanup);
-
   it.each([['legs image 1'], ['legs image 2']])(
     'renders the legs image: %s',
     (altText: string) => {

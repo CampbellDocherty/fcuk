@@ -1,10 +1,8 @@
 import { screen } from '@testing-library/react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from '../App';
 
 describe('When a user lands on the home page', () => {
-  afterEach(cleanup);
-
   it.each([
     ['first left arrow'],
     ['second left arrow'],
