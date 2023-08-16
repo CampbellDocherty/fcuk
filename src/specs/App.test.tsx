@@ -3,9 +3,6 @@ import { cleanup, render } from '@testing-library/react';
 import App from '../App';
 
 describe('When a user lands on the home page', () => {
-  beforeEach(() => {
-    render(<App />);
-  });
   afterEach(cleanup);
 
   it.each([
@@ -22,6 +19,7 @@ describe('When a user lands on the home page', () => {
     ['random button'],
     ['screenshot button'],
   ])('shows the %s', (altText: string) => {
+    render(<App />);
     screen.getByAltText(altText);
   });
 });
