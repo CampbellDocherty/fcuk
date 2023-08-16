@@ -1,13 +1,8 @@
 import { screen } from '@testing-library/react';
-import { cleanup, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from '../App';
 
 describe('When a user lands on the home page', () => {
-  beforeEach(() => {
-    render(<App />);
-  });
-  afterEach(cleanup);
-
   it.each([
     ['first left arrow'],
     ['second left arrow'],
@@ -22,6 +17,7 @@ describe('When a user lands on the home page', () => {
     ['random button'],
     ['screenshot button'],
   ])('shows the %s', (altText: string) => {
+    render(<App />);
     screen.getByAltText(altText);
   });
 });

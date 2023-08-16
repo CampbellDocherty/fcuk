@@ -59,7 +59,7 @@
       "rules": {
         "import/no-extraneous-dependencies": 0
       },
-      "files": "src/test/**"
+      "files": ["src/test/**", "src/setupTests.js"]
     }
   ],
   "parserOptions": {
