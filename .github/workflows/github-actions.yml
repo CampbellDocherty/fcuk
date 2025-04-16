@@ -2,6 +2,9 @@ name: Actions
 
 on: [push]
 
+permissions:
+  contents: write
+
 jobs:
   lint:
     name: lint
@@ -10,18 +13,9 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: v1-yarn-deps-
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --production=false --frozen-lockfile
 
       - name: Run eslint
@@ -39,18 +33,9 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: v1-yarn-deps-
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --production=false --frozen-lockfile
 
       - name: test
@@ -67,18 +52,9 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
-
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: v1-yarn-deps-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: v1-yarn-deps-
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: yarn install --production=false --frozen-lockfile
 
       - name: Build
@@ -93,7 +69,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install and Build
         run: |
@@ -104,4 +80,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          folder: dist # The folder the action should deploy.
